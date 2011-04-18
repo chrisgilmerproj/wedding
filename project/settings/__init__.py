@@ -8,6 +8,8 @@ sys.path.insert(0, os.path.join(PROJECT_ROOT, "apps"))
 # People who get code error notifications when DEBUG=False
 ADMINS = (('Your admin name', 'admin@example.com'),)
 
+AUTH_PROFILE_MODULE = 'guests.Guest'
+
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.sqlite3', 
@@ -36,7 +38,7 @@ INSTALLED_APPS = (
     'django.contrib.messages',
     'django.contrib.sessions',
     'django.contrib.sites',
-    'django.contrib.staticfiles',
+    #'django.contrib.staticfiles',
     'initial_data', # load django-admin commands, initial fixtures, ..
 
 	'guests',
