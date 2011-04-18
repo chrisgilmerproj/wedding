@@ -38,6 +38,9 @@ INSTALLED_APPS = (
     'django.contrib.sites',
     'django.contrib.staticfiles',
     'initial_data', # load django-admin commands, initial fixtures, ..
+
+	'guests',
+	'notifications',
 )
 
 # The language code for this installation
@@ -104,14 +107,14 @@ TEMPLATE_LOADERS = (
 # The time zone for this installation
 TIME_ZONE = 'America/Los_Angeles'
 
-# Output the "Etag" header. his saves bandwidth but slows down performance
+# Output the "Etag" header. This saves bandwidth but slows down performance
 USE_ETAGS = False
 
 # Display numbers using a thousand separator
 USE_THOUSAND_SEPARATOR = True
 
 # Enable Django's internationalization system 
-USE_I18N = True
+USE_I18N = False
 
 # Display numbers and dates using the format of the current locale
-USE_L10N = True
+USE_L10N = False
