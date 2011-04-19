@@ -1,0 +1,23 @@
+{% extends "base.html" %}
+
+{% block content %}
+<form action="." method="GET">
+	<label for="q">Search: </label>
+	<input type="text" name="q" value="{{ query|escape }}">
+	<input type="submit" value="Search">
+</form>
+{% if query %}
+	<h2>Results for "{{ query|escape }}":</h2>
+	
+	{% if groups %}
+		<ul>
+		{% for group in groups %}
+			<li>{{ group|escape }}</l1>
+		{% endfor %}
+		</ul>
+	{% else %}
+		<p>Sorry, your reservation was not found.  This must be a glitch so please call us.</p>
+	{% endif %}
+{% endif %}
+
+{% endblock %}
