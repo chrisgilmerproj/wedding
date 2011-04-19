@@ -1,6 +1,3 @@
-#--- pip
-pip == 0.8.3 # pip >= 0.8.2 is required for git branch to work correctly
-
 #--- Django
 django == 1.3
 django-extensions
@@ -14,7 +11,7 @@ pygments          # for syntax color in docutils
 -e git+git://github.com/apache/libcloud.git@trunk#egg=libcloud
 
 #--- Databases
-# MySQL-python
+django-uni-form
 
 #--- Admin
 # django-grappelli == 2.3

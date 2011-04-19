@@ -1,10 +1,21 @@
 <!doctype html>
 <html>
-    <head>
-      <title>{% block title %}{% endblock title %}</title>
-      <link rel="stylesheet" href="{{ STATIC_URL }}css/style.css">
-    </head>
-    <body>
-      {% block content %}{% endblock content %}
-    </body>
+	<head>
+		<title>{% block title %}{% endblock title %}</title>
+		<link rel="stylesheet" href="{{ STATIC_URL }}css/style.css">
+		{% block extra_head %}
+		{% endblock extra_head %}
+	</head>
+	<body>
+		{% block content %}
+		{% endblock content %}
+  	</body>
+
+	<script type="text/javascript"> 
+		var gaJsHost = (("https:" == document.location.protocol) ? "https://" : "http://");
+		document.write(unescape("%3Cscript src='" + gaJsHost + "ajax.googleapis.com/ajax/libs/jquery/1.5/jquery.min.js' type='text/javascript'%3E%3C/script%3E"));
+	</script>
+	{% block extra_body %}
+	{% endblock extra_body %}
+  
 </html>

@@ -2,7 +2,7 @@ from django.conf import settings
 from django.conf.urls.defaults import *
 from django.conf.urls.static import static
 from django.contrib import admin
-#from django.contrib.staticfiles.urls import staticfiles_urlpatterns
+from django.contrib.staticfiles.urls import staticfiles_urlpatterns
 from django.views.generic import TemplateView
 
 admin.autodiscover()
@@ -12,11 +12,11 @@ urlpatterns = patterns('',
     # Homepage
     (r'^$', TemplateView.as_view(template_name='homepage.html')),
 	
-	url(r'^guests/', include('guests.urls')),
+	url(r'^rsvp/', include('rsvp.urls')),
 )
 
 # Static URLs
-#urlpatterns += staticfiles_urlpatterns()
+urlpatterns += staticfiles_urlpatterns()
 
 # Upload URLS
 if settings.DEBUG:

@@ -12,7 +12,7 @@
 	{% if groups %}
 		<ul>
 		{% for group in groups %}
-			<li>{{ group|escape }}</l1>
+		<li><a href="{{group.get_absolute_url}}">{{ group|escape }}</a></l1>
 		{% endfor %}
 		</ul>
 	{% else %}

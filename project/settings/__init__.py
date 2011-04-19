@@ -41,8 +41,9 @@ INSTALLED_APPS = (
     #'django.contrib.staticfiles',
     'initial_data', # load django-admin commands, initial fixtures, ..
 
-	'guests',
 	'notifications',
+	'rsvp',
+	'uni_form',
 )
 
 # The language code for this installation

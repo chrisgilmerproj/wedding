@@ -1,12 +1,28 @@
 {% extends "base.html" %}
 
+{% load uni_form_tags %}
+
+{% block extra_head %}
+	<link rel="stylesheet" href="{{ STATIC_URL }}uni_form/uni-form.css" type="text/css" />
+	<link rel="stylesheet" href="{{ STATIC_URL }}uni_form/default.uni-form.css" type="text/css" />
+{% endblock extra_head %}
+
+{% block extra_body %}
+	<script src="{{ STATIC_URL }}uni_form/uni-form.jquery.js" type="text/javascript"></script>
+{% endblock extra_body %}
+
 {% block content %}
-<form method="post" action="">
-	
+<p>RSVP for {{group.name}}'s party</p>
+<form method="post" action="" class="uniForm">
+	{% csrf_token %}
+	{{ form|as_uni_form }}
 	{{ formset.management_form }}
-	{% for form in formset %}
-		{{ form }}
+	{% for inlineform in formset %}
+		{{ inlineform|as_uni_form }}
 	{% endfor %}
+	<div class="form_block">
+		<input type="submit" value="Submit RSVP"/>
+	</div>
 	
 </form>
 {% endblock %}

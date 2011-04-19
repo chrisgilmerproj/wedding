@@ -1,7 +1,8 @@
 from django.contrib import admin
-from guests.models import Group,Guest
+from rsvp.models import Group,Guest
 
 class GuestInline(admin.TabularInline):
+	extra = 1
 	model = Guest
 
 class GuestAdmin(admin.ModelAdmin):
