@@ -38,10 +38,10 @@ INSTALLED_APPS = (
     'django.contrib.messages',
     'django.contrib.sessions',
     'django.contrib.sites',
-    #'django.contrib.staticfiles',
-    'initial_data', # load django-admin commands, initial fixtures, ..
+    'django.contrib.staticfiles',
 
-	'notifications',
+    'initial_data', # load django-admin commands, initial fixtures, ..
+	'messages',
 	'rsvp',
 	'uni_form',
 )
