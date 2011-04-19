@@ -19,7 +19,7 @@ urlpatterns = patterns('',
     url(r'^story/$',      TemplateView.as_view(template_name='story.html'),      name="story"),
 	
 	# Dynamic Pages
-	#url(r'^messages/', include('messages.urls')),
+	url(r'^messages/', include('messages.urls')),
 	url(r'^rsvp/', include('rsvp.urls')),
 )
 
