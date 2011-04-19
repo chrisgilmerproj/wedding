@@ -11,12 +11,12 @@ urlpatterns = patterns('',
     (r'^admin/', include(admin.site.urls)),
     
 	# Static Pages
-    (r'^$',            TemplateView.as_view(template_name='homepage.html')),
-    (r'^contact/$',    TemplateView.as_view(template_name='contact.html')),
-    (r'^directions/$', TemplateView.as_view(template_name='directions.html')),
-    (r'^gallery/$',    TemplateView.as_view(template_name='gallery.html')),
-    (r'^program/$',    TemplateView.as_view(template_name='program.html')),
-    (r'^story/$',      TemplateView.as_view(template_name='story.html')),
+    url(r'^$',            TemplateView.as_view(template_name='homepage.html'),   name="home"),
+    url(r'^contact/$',    TemplateView.as_view(template_name='contact.html'),    name="contact"),
+    url(r'^directions/$', TemplateView.as_view(template_name='directions.html'), name="directions"),
+    url(r'^gallery/$',    TemplateView.as_view(template_name='gallery.html'),    name="gallery"),
+    url(r'^program/$',    TemplateView.as_view(template_name='program.html'),    name="program"),
+    url(r'^story/$',      TemplateView.as_view(template_name='story.html'),      name="story"),
 	
 	# Dynamic Pages
 	#url(r'^messages/', include('messages.urls')),

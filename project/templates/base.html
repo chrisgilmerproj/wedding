@@ -7,6 +7,16 @@
 		{% endblock extra_head %}
 	</head>
 	<body>
+		<nav>
+			<ul>
+				<li><a href="{% url home %}">Home</a></li>
+				<li><a href="{% url story %}">Story</a></li>
+				<li><a href="{% url gallery %}">Gallery</a></li>
+				<li><a href="{% url directions %}">Directions</a></li>
+				<li><a href="{% url program %}">Program</a></li>
+				<li><a href="{% url contact %}">Contact</a></li>
+			</ul>
+		</nav>
 		{% block content %}
 		{% endblock content %}
   	</body>
