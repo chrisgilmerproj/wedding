@@ -29,7 +29,10 @@ class GroupAdmin(admin.ModelAdmin):
 			}),
 		)
 	inlines       = [GuestInline,]
-	list_display  = ['name','response','party','email',]
+	list_display  = ['name','response','party','email','number_guests',
+			'announcement_required','invitation_required','thank_you_required',]
+	list_filter   = ['response','party',
+			'announcement_required','invitation_required','thank_you_required',]
 	search_fields = ['name','gift_received',]
 
 admin.site.register(Group,GroupAdmin)
