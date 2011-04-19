@@ -9,9 +9,17 @@ admin.autodiscover()
 urlpatterns = patterns('',
     (r'^admin/doc/', include('django.contrib.admindocs.urls')),
     (r'^admin/', include(admin.site.urls)),
-    # Homepage
-    (r'^$', TemplateView.as_view(template_name='homepage.html')),
+    
+	# Static Pages
+    (r'^$',            TemplateView.as_view(template_name='homepage.html')),
+    (r'^contact/$',    TemplateView.as_view(template_name='contact.html')),
+    (r'^directions/$', TemplateView.as_view(template_name='directions.html')),
+    (r'^gallery/$',    TemplateView.as_view(template_name='gallery.html')),
+    (r'^program/$',    TemplateView.as_view(template_name='program.html')),
+    (r'^story/$',      TemplateView.as_view(template_name='story.html')),
 	
+	# Dynamic Pages
+	#url(r'^messages/', include('messages.urls')),
 	url(r'^rsvp/', include('rsvp.urls')),
 )
 
