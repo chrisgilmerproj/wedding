@@ -5,18 +5,20 @@ from django.contrib import admin
 from django.contrib.staticfiles.urls import staticfiles_urlpatterns
 from django.views.generic import TemplateView
 
+from weddings.views import WeddingView
+
 admin.autodiscover()
 urlpatterns = patterns('',
     (r'^admin/doc/', include('django.contrib.admindocs.urls')),
     (r'^admin/', include(admin.site.urls)),
     
 	# Static Pages
-    url(r'^$',            TemplateView.as_view(template_name='homepage.html'),   name="home"),
-    url(r'^contact/$',    TemplateView.as_view(template_name='contact.html'),    name="contact"),
-    url(r'^directions/$', TemplateView.as_view(template_name='directions.html'), name="directions"),
-    url(r'^gallery/$',    TemplateView.as_view(template_name='gallery.html'),    name="gallery"),
-    url(r'^program/$',    TemplateView.as_view(template_name='program.html'),    name="program"),
-    url(r'^story/$',      TemplateView.as_view(template_name='story.html'),      name="story"),
+    url(r'^$',            WeddingView.as_view(template_name='homepage.html'),   name="home"),
+    url(r'^contact/$',    WeddingView.as_view(template_name='contact.html'),    name="contact"),
+    url(r'^directions/$', WeddingView.as_view(template_name='directions.html'), name="directions"),
+    url(r'^gallery/$',    WeddingView.as_view(template_name='gallery.html'),    name="gallery"),
+    url(r'^program/$',    WeddingView.as_view(template_name='program.html'),    name="program"),
+    url(r'^story/$',      WeddingView.as_view(template_name='story.html'),      name="story"),
 	
 	# Dynamic Pages
 	url(r'^messages/', include('messages.urls')),
