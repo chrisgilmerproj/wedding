@@ -1,5 +1,27 @@
 {% extends "base.html" %}
 
 {% block content %}
-Come back here for directions
+<p>
+Rehearsal Dinner: 
+To be held at 
+{% if wedding.rehearsal_address %}
+	{{wedding.rehearsal_address}}
+{% else %}TBD{%endif%} 
+at {% if wedding.rehearsal_dinner %}{{wedding.rehearsal_dinner}}{% else %}TBD{%endif%}
+</p>
+<br/>
+<p>
+Wedding Ceremony: 
+To be held at 
+{% if wedding.wedding_address %}
+	{{wedding.wedding_address}}
+{% else %}TBD{%endif%} 
+at {% if wedding.wedding_ceremony %}{{wedding.wedding_ceremony}}{% else %}TBD{%endif%}
+</p>
+<br/>
+<p>
+Reception to follow at 
+{% if wedding.wedding_reception %}{{wedding.wedding_reception}}{% else %}TBD{%endif%}
+</p>
+<br/>
 {% endblock content %}

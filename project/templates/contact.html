@@ -1,5 +1,5 @@
 {% extends "base.html" %}
 
 {% block content %}
-Please contact us at the following number: 333-333-3333
+Please contact us at {{wedding.contact_phone}} or <a href="mailto:{{wedding.contact_email}}">{{wedding.contact_email}}</a>
 {% endblock %}
