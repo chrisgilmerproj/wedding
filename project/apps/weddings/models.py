@@ -22,8 +22,9 @@ class Wedding(models.Model):
 		return '%s and %s Wedding' % (self.bride,self.groom)
 	
 	def save(self,*args,**kwargs):
+		super(Wedding,self).save(*args,**kwargs)
 		if self.featured:
-			for wedding in Wedding.objects.all():
+			for wedding in Wedding.objects.exclude(id=self.id):
 				wedding.featured=False,
 				wedding.save()
-		super(Wedding,self).save(*args,**kwargs)
+		
