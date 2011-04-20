@@ -94,15 +94,6 @@ STATIC_URL = '/static/'
 # For integration with staticfiles, this should be  STATIC_URL + 'admin/'.
 ADMIN_MEDIA_PREFIX = STATIC_URL + 'admin/'
 
-TEMPLATE_CONTEXT_PROCESSORS = (
-	"django.contrib.auth.context_processors.auth",
-	"django.core.context_processors.debug",
-	"django.core.context_processors.i18n",
-	"django.core.context_processors.media",
-	"django.core.context_processors.static",
-	"django.contrib.messages.context_processors.messages",
-)
-
 # Display a detailed report for any TemplateSyntaxError.
 TEMPLATE_DEBUG = DEBUG
 
