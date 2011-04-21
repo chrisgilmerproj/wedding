@@ -1,7 +1,7 @@
 <!doctype html>
 <html>
 	<head>
-		<title>{% block title %}{% endblock title %}</title>
+		<title>{% block title %}{% endblock title %} | Chris and Megan</title>
 		<link rel="stylesheet" href="{{ STATIC_URL }}css/style.css">
 		{% block extra_head %}
 		{% endblock extra_head %}
@@ -9,8 +9,8 @@
 	<body>
 		<nav>
 			<ul>
-				<li><a href="{% url home %}">Home</a></li>
-				<li><a href="{% url story %}">Story</a></li>
+				<li><a href="{% url home %}">Welcome</a></li>
+				<li><a href="{% url story %}">Our Story</a></li>
 				<li><a href="{% url gallery %}">Gallery</a></li>
 				<li><a href="{% url directions %}">Directions</a></li>
 				<li><a href="{% url program %}">Program</a></li>
