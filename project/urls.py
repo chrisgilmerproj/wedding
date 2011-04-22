@@ -5,7 +5,7 @@ from django.contrib import admin
 from django.contrib.staticfiles.urls import staticfiles_urlpatterns
 from django.views.generic import TemplateView
 
-from weddings.views import WeddingView
+from weddings.views import WeddingView, EventDetailView
 
 admin.autodiscover()
 urlpatterns = patterns('',
@@ -22,7 +22,8 @@ urlpatterns = patterns('',
 	
 	# Dynamic Pages
 	url(r'^messages/', include('messages.urls')),
-	url(r'^rsvp/', include('rsvp.urls')),
+	url(r'^rsvp/',     include('rsvp.urls')),
+	url(r'^event/(?P<pk>\d+)/$', EventDetailView.as_view(), name="event_detail"),    
 )
 
 # Static URLs
