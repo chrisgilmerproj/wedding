@@ -21,7 +21,3 @@ class EventDetailView(DetailView):
 	queryset            = Event.objects.all()
 	template_name       = 'weddings/event.html'
 
-	#def get_object(self, slug=None, *args, **kwargs):
-	#	print slug,self.get_queryset().filter(slug=slug), args, kwargs
-	#	get_object_or_404(self.get_queryset(), slug=slug)
-

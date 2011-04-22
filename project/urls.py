@@ -21,9 +21,9 @@ urlpatterns = patterns('',
     url(r'^story/$',      WeddingView.as_view(template_name='story.html'),      name="story"),
 	
 	# Dynamic Pages
+	url(r'^event/(?P<slug>\w+)/$', EventDetailView.as_view(), name="event_detail"),    
 	url(r'^messages/', include('messages.urls')),
 	url(r'^rsvp/',     include('rsvp.urls')),
-	url(r'^event/(?P<pk>\d+)/$', EventDetailView.as_view(), name="event_detail"),    
 )
 
 # Static URLs
