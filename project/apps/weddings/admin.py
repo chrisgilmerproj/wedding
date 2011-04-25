@@ -4,6 +4,7 @@ from weddings.models import Wedding, Event
 class EventInline(admin.StackedInline):
 	extra = 0
 	model = Event
+	prepopulated_fields = {"slug": ("name",)}
 
 class WeddingAdmin(admin.ModelAdmin):
 	inlines = [EventInline,]

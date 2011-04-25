@@ -11,15 +11,19 @@
 	</p>
 	{% if event.venue %}
 		<p>
-		Location: 
-		{{event.venue}}
+		Location: {{event.venue}}
+		</p>
+		<p>
 		{{event.address}}, {{event.city}}, {{event.state}} {{event.zipcode}}
 		</p>
 		<p>
-		Contact at {{event.phone}} or {{event.email}}
+		For more information:
+		{% if event.phone %}{{event.phone}}{% endif %} 
+		{% if event.phone and event.email %}or{% endif%} 
+		{% if event.email %}{{event.email}}{% endif %}
 		</p>
 		<p>
-		{{event.about}}
+		<b>About {{event.venue}}:</b> {{event.about}}
 		</p>
 	{%endif%} 
 	<br/>
