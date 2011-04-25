@@ -1,8 +1,13 @@
 from django.contrib import admin
 from weddings.models import Wedding, Event
 
+class EventInline(admin.StackedInline):
+	extra = 0
+	model = Event
+
 class WeddingAdmin(admin.ModelAdmin):
-	list_display = ['bride','groom','contact_phone','contact_email',]
+	inlines = [EventInline,]
+	list_display = ['bride','groom','contact_phone','contact_email','featured']
 
 admin.site.register(Wedding,WeddingAdmin)
 

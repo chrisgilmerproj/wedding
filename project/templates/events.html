@@ -1,0 +1,28 @@
+{% extends 'base.html' %}
+
+{% block title %}Events{% endblock title %}
+
+{% block content %}
+
+{% for event in wedding.event_set.all %}
+	<h2>{{event.name}}</h2>
+	<p>
+	To be held on {% if event.date %}{{event.date}}{% else %}TBD{%endif%}
+	</p>
+	{% if event.venue %}
+		<p>
+		Location: 
+		{{event.venue}}
+		{{event.address}}, {{event.city}}, {{event.state}} {{event.zipcode}}
+		</p>
+		<p>
+		Contact at {{event.phone}} or {{event.email}}
+		</p>
+		<p>
+		{{event.about}}
+		</p>
+	{%endif%} 
+	<br/>
+{% endfor %}
+
+{% endblock content %}
