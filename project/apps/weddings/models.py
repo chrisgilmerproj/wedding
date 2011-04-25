@@ -1,3 +1,5 @@
+from datetime import datetime
+
 from django.contrib.localflavor.us.models import USStateField
 from django.contrib.localflavor.us.us_states import US_STATES
 from django.db import models
@@ -42,4 +44,7 @@ class Event(models.Model):
 	
 	def __unicode__(self):
 		return '%s: %s' % (self.wedding,self.name)
+
+	def days_remaining(self):
+		return (self.date-datetime.now()).days
 
