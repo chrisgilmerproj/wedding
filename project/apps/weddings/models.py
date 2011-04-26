@@ -48,3 +48,5 @@ class Event(models.Model):
 	def days_remaining(self):
 		return (self.date-datetime.now()).days
 
+	class Meta:
+		ordering = ('date',)
