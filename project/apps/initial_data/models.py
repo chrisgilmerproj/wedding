@@ -16,7 +16,7 @@ if settings.DEBUG:
     from socket import gethostname # Hostname based local settings 
     hostname = gethostname().split('.')[0]
     try:
-        _f = __file__              
+        _f = __file__
         path = os.path.join(settings.PROJECT_ROOT, 'settings')
         sys.path.insert(0, path)   
         globals().update(__import__(hostname).__dict__)
