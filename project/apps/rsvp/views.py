@@ -1,5 +1,6 @@
+from django.http import HttpResponseRedirect
 from django.forms.models import inlineformset_factory
-from django.shortcuts import render_to_response, get_object_or_404
+from django.shortcuts import render_to_response, get_object_or_404, redirect
 from django.template import RequestContext
 
 from apps.rsvp.forms import GroupForm
@@ -28,6 +29,20 @@ def rsvp_detail(request,**kwargs):
 	group_id = kwargs.get('pk',None)
 	group = get_object_or_404(Group,pk=group_id)
 
+	template_name = 'rsvp/rsvp_detail.html'
+	context = {
+		'group': group,
+	}
+	return render_to_response(
+		template_name,
+		context,
+		context_instance=RequestContext(request)
+		)
+
+def rsvp_edit(request,**kwargs):
+	group_id = kwargs.get('pk',None)
+	group = get_object_or_404(Group,pk=group_id)
+
 	GuestInlineFormSet = inlineformset_factory(Group,Guest,
 			extra=group.number_guests, max_num=group.number_guests)
 	if request.method == "POST":
@@ -36,11 +51,12 @@ def rsvp_detail(request,**kwargs):
 		if form.is_valid() and formset.is_valid():
 			form.save()
 			formset.save()
+			return redirect(group.get_absolute_url())
 	else:
 		form    = GroupForm(instance=group)
 		formset = GuestInlineFormSet(instance=group)
 	
-	template_name = 'rsvp/rsvp_detail.html'
+	template_name = 'rsvp/rsvp_edit.html'
 	context = {
 		'form':form,
 		'formset':formset,
