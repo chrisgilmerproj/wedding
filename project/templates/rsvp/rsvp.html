@@ -9,17 +9,21 @@
 	<input type="submit" value="Search">
 </form>
 {% if query %}
-	<h2>Results for "{{ query|escape }}":</h2>
 	
 	{% if groups %}
+	<h2>Results for "{{ query|escape }}":</h2>
 		<ul>
 		{% for group in groups %}
-		<li><a href="{{group.get_absolute_url}}">{{ group|escape }}</a></l1>
+			<li><a href="{{group.get_absolute_url}}">{{ group|escape }}</a></l1>
 		{% endfor %}
 		</ul>
 	{% else %}
-		<p>Sorry, your reservation was not found.  This must be a glitch so please call us.</p>
+	<p>Sorry, no reservation matching "{{query|escape}}" was found.</p>
 	{% endif %}
 {% endif %}
 
 {% endblock %}
+
+{% block footer %}
+<p>We apologize if you are unable to find your reservation. Please <a href="{% url contact %}">contact us</a> to let us know about the problem.</p>
+{% endblock footer %}
