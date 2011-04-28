@@ -10,7 +10,7 @@ def rsvp(request):
 	query = request.GET.get('q','')
 
 	if query:
-		groups = Group.objects.filter(name__icontains=query)
+		groups = Group.objects.filter(name__icontains=query,invitation_required=True)
 	else:
 		groups = []
 	
