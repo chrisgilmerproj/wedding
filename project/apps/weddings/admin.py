@@ -1,5 +1,5 @@
 from django.contrib import admin
-from weddings.models import Wedding, Event, Registry
+from weddings.models import Wedding, Event, Registry, Lodging
 
 class EventInline(admin.StackedInline):
 	extra = 0
@@ -26,4 +26,9 @@ class RegistryAdmin(admin.ModelAdmin):
 	list_display = ['wedding','name','url',]
 
 admin.site.register(Registry,RegistryAdmin)
+
+class LodgingAdmin(admin.ModelAdmin):
+	list_display = ['wedding','name','email','phone']
+
+admin.site.register(Lodging,LodgingAdmin)
 

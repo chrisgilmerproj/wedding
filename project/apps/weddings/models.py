@@ -65,3 +65,25 @@ class Registry(models.Model):
 		ordering = ('name',)
 		verbose_name_plural = 'registries'
 
+class Lodging(models.Model):
+
+	wedding  = models.ForeignKey(Wedding)
+	name     = models.CharField(max_length=80)
+
+	# Contact Information
+	email    = models.EmailField(blank=True, null=True)
+	phone    = models.CharField(max_length=15, blank=True, null=True)
+	address  = models.CharField(max_length=80, blank=True, null=True)
+	city     = models.CharField(max_length=80, blank=True, null=True)
+	state    = USStateField(choices=US_STATES, blank=True, null=True)
+	zipcode  = models.CharField(max_length=10, blank=True, null=True)
+	about    = models.TextField(blank=True, null=True)
+	
+	def __unicode__(self):
+		return '%s: %s' % (self.wedding,self.name)
+
+	class Meta:
+		ordering = ('name',)
+		verbose_name = 'lodge'
+		verbose_name_plural = 'lodges'
+

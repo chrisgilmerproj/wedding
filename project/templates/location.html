@@ -1,7 +1,18 @@
 {% extends "base.html" %}
 
-{% block title %}Wedding Day Program{% endblock title %}
+{% block title %}Lodging{% endblock title %}
 
 {% block content %}
-Look here for day-of wedding program
+	<h2>Lodging</h2>
+
+	{% if wedding.lodging_set.all %}
+	<p>We have set up the following accomodations:</p>
+	<ul>
+	{% for lodge in wedding.lodging_set.all %}
+	<li>{{lodge.name}}</li>
+	{% endfor %}
+	</ul>
+	{% else %}
+	<p>Check back here for more information about accomodations.</p>
+	{% endif %}
 {% endblock %}
