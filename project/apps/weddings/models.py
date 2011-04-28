@@ -50,3 +50,18 @@ class Event(models.Model):
 
 	class Meta:
 		ordering = ('date',)
+
+class Registry(models.Model):
+
+	wedding  = models.ForeignKey(Wedding)
+	name     = models.CharField(max_length=80)
+	url      = models.URLField(verify_exists=True)
+	image    = models.URLField(verify_exists=True)
+
+	def __unicode__(self):
+		return '%s: %s' % (self.wedding,self.name)
+
+	class Meta:
+		ordering = ('name',)
+		verbose_name_plural = 'registries'
+
