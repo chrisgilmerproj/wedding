@@ -6,4 +6,16 @@
 <h2>RSVP for {{group.name}}'s party</h2>
 <a href="{% url rsvp_edit pk=group.pk %}">Edit the RSVP for {{group}}</a>
 
+<ul>
+	<li>Your Response: {{group.get_response_display}}</li>
+	<li>Your Party: {{group.get_party_display}}</li>
+	<li>Your Contact Info: {{group.email}}{% if group.email and group.phone %} and {%endif%}{{group.phone}}
+</ul>
+
+<p>We expect {{group.number_guests}} guest{{group.number_guests|pluralize}} in your party. They are:</p>
+<ul>
+{% for guest in group.guest_set.all %}
+<li>{{guest}}</li>
+{% endfor %}
+</ul>
 {% endblock %}
