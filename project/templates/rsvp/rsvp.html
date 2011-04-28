@@ -11,7 +11,7 @@
 {% if query %}
 	
 	{% if groups %}
-	<h2>Results for "{{ query|escape }}":</h2>
+	<h2>Party results for "{{ query|escape }}":</h2>
 		<ul>
 		{% for group in groups %}
 			<li><a href="{{group.get_absolute_url}}">{{ group|escape }}</a></l1>

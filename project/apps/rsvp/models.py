@@ -60,6 +60,9 @@ class Group(models.Model):
 			self.thank_you_required = True
 		super(Group,self).save(*args,**kwargs)
 
+	class Meta:
+		ordering = ('name',)
+
 class Guest(models.Model):
 	""" Capture information about each guest """
 
