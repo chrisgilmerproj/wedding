@@ -13,6 +13,10 @@ pygments          # for syntax color in docutils
 #--- Databases
 django-uni-form
 
+#--- Maps
+geopy
+django-easy-maps
+
 #--- Admin
 # django-grappelli == 2.3
 # -e hg+http://bitbucket.org/izi/django-admin-tools@v0.4.0#egg=admin-tools

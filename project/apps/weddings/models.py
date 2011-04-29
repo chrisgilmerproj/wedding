@@ -48,6 +48,9 @@ class Event(models.Model):
 	def days_remaining(self):
 		return (self.date-datetime.now()).days
 
+	def full_address(self):
+		return "%s %s, %s %s" % (self.address, self.city, self.state, self.zipcode)
+
 	class Meta:
 		ordering = ('date',)
 
@@ -81,6 +84,9 @@ class Lodging(models.Model):
 	
 	def __unicode__(self):
 		return '%s: %s' % (self.wedding,self.name)
+
+	def full_address(self):
+		return "%s %s, %s %s" % (self.address, self.city, self.state, self.zipcode)
 
 	class Meta:
 		ordering = ('name',)

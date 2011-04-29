@@ -1,5 +1,7 @@
 {% extends 'base.html' %}
 
+{% load easy_maps_tags %}
+
 {% block title %}Events{% endblock title %}
 
 {% block content %}
@@ -16,7 +18,7 @@
 		</p>
 		<p>
 		{{event.address}}, {{event.city}}, {{event.state}} {{event.zipcode}}
-		</p>
+		{% easy_map event.full_address 300 300 13 %}</p>
 		<p>
 		For more information:
 		{% if event.phone %}{{event.phone}}{% endif %} 

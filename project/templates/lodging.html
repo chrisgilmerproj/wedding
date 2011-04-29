@@ -1,5 +1,7 @@
 {% extends "base.html" %}
 
+{% load easy_maps_tags %}
+
 {% block title %}Lodging{% endblock title %}
 
 {% block content %}
@@ -9,7 +11,7 @@
 	<p>We have set up the following accomodations:</p>
 	<ul>
 	{% for lodge in wedding.lodging_set.all %}
-	<li>{{lodge.name}}</li>
+	<li>{{lodge.name}} {% easy_map lodge.full_address 300 300 13 %}</li>
 	{% endfor %}
 	</ul>
 	{% else %}

@@ -40,6 +40,8 @@ INSTALLED_APPS = (
     'django.contrib.sites',
     'django.contrib.staticfiles',
 
+	'easy_maps',
+
     'initial_data', # load django-admin commands, initial fixtures, ..
 	'messages',
 	'rsvp',
