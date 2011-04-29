@@ -18,7 +18,7 @@
 		</p>
 		<p>
 		{{event.address}}, {{event.city}}, {{event.state}} {{event.zipcode}}
-		{% easy_map event.full_address 300 300 13 %}</p>
+		{% easy_map event.address 300 300 13 %}</p>
 		<p>
 		For more information:
 		{% if event.phone %}{{event.phone}}{% endif %} 

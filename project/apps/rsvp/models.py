@@ -24,6 +24,7 @@ class Group(models.Model):
 	# Contact Information
 	email    = models.EmailField(blank=True, null=True)
 	phone    = models.CharField(max_length=15, blank=True, null=True)
+	
 	address  = models.CharField(max_length=80, blank=True, null=True)
 	city     = models.CharField(max_length=80, blank=True, null=True)
 	state    = USStateField(choices=US_STATES, blank=True, null=True)
@@ -59,6 +60,9 @@ class Group(models.Model):
 		if self.gift_received:
 			self.thank_you_required = True
 		super(Group,self).save(*args,**kwargs)
+
+	def full_address(self):
+		return "%s %s, %s %s" % (self.address, self.city, self.state, self.zipcode)
 
 	class Meta:
 		ordering = ('name',)

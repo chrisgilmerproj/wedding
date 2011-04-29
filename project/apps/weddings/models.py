@@ -29,17 +29,14 @@ class Event(models.Model):
 
 	wedding  = models.ForeignKey(Wedding)
 	name     = models.CharField(max_length=80)
-	slug     = models.SlugField()
 	date     = models.DateTimeField(blank=True, null=True)
 
 	# Contact Information
 	venue    = models.CharField(max_length=80, blank=True, null=True)
 	email    = models.EmailField(blank=True, null=True)
 	phone    = models.CharField(max_length=15, blank=True, null=True)
-	address  = models.CharField(max_length=80, blank=True, null=True)
-	city     = models.CharField(max_length=80, blank=True, null=True)
-	state    = USStateField(choices=US_STATES, blank=True, null=True)
-	zipcode  = models.CharField(max_length=10, blank=True, null=True)
+	url      = models.URLField(max_length=200, blank=True, null=True)
+	address  = models.CharField(max_length=200, blank=True, null=True)
 	about    = models.TextField(blank=True, null=True)
 	
 	def __unicode__(self):
@@ -47,9 +44,6 @@ class Event(models.Model):
 
 	def days_remaining(self):
 		return (self.date-datetime.now()).days
-
-	def full_address(self):
-		return "%s %s, %s %s" % (self.address, self.city, self.state, self.zipcode)
 
 	class Meta:
 		ordering = ('date',)
@@ -76,17 +70,12 @@ class Lodging(models.Model):
 	# Contact Information
 	email    = models.EmailField(blank=True, null=True)
 	phone    = models.CharField(max_length=15, blank=True, null=True)
-	address  = models.CharField(max_length=80, blank=True, null=True)
-	city     = models.CharField(max_length=80, blank=True, null=True)
-	state    = USStateField(choices=US_STATES, blank=True, null=True)
-	zipcode  = models.CharField(max_length=10, blank=True, null=True)
+	url      = models.URLField(max_length=200, blank=True, null=True)
+	address  = models.CharField(max_length=200, blank=True, null=True)
 	about    = models.TextField(blank=True, null=True)
 	
 	def __unicode__(self):
 		return '%s: %s' % (self.wedding,self.name)
-
-	def full_address(self):
-		return "%s %s, %s %s" % (self.address, self.city, self.state, self.zipcode)
 
 	class Meta:
 		ordering = ('name',)
