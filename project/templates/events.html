@@ -25,6 +25,7 @@
 		{% if event.phone %}{{event.phone}}{% endif %} 
 		{% if event.phone and event.email %}or{% endif%} 
 		{% if event.email %}{{event.email}}{% endif %}
+		{% if event.url %}<br/><a href="{{event.url}}">{{event.url}}</a>{% endif %}
 		</p>
 		<p>
 		<b>About {{event.venue}}:</b> {{event.about}}
