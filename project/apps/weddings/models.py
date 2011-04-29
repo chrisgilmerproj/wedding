@@ -1,8 +1,9 @@
 from datetime import datetime
-
-from django.contrib.localflavor.us.models import USStateField
-from django.contrib.localflavor.us.us_states import US_STATES
 from django.db import models
+
+def get_google_maps_url(address):
+	url = 'http://maps.google.com/maps?q='
+	return url + '+'.join(address.split())
 
 class Wedding(models.Model):
 
@@ -45,6 +46,9 @@ class Event(models.Model):
 	def days_remaining(self):
 		return (self.date-datetime.now()).days
 
+	def google_maps(self):
+		return get_google_maps_url(self.address)
+
 	class Meta:
 		ordering = ('date',)
 
@@ -76,6 +80,9 @@ class Lodging(models.Model):
 	
 	def __unicode__(self):
 		return '%s: %s' % (self.wedding,self.name)
+
+	def google_maps(self):
+		return get_google_maps_url(self.address)
 
 	class Meta:
 		ordering = ('name',)

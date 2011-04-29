@@ -17,8 +17,9 @@
 		Location: {{event.venue}}
 		</p>
 		<p>
-		{{event.address}}, {{event.city}}, {{event.state}} {{event.zipcode}}
-		{% easy_map event.address 300 300 13 %}</p>
+			<a href="{{event.google_maps}}">{{event.address}}</a>
+			{% easy_map event.address 300 300 13 %}
+		</p>
 		<p>
 		For more information:
 		{% if event.phone %}{{event.phone}}{% endif %} 
