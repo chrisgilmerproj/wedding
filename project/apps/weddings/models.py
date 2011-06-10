@@ -10,6 +10,8 @@ class Wedding(models.Model):
 	featured          = models.BooleanField(default=True)
 	contact_phone     = models.CharField(max_length=15,blank=True)
 	contact_email     = models.EmailField(blank=True)
+        failed            = models.BooleanField(default=False)
+        divorce_date      = models.DateTimeField(blank=True, null=True)
 
 	bride             = models.CharField(max_length=80,blank=True)
 	bride_parents     = models.CharField(max_length=80,blank=True)
