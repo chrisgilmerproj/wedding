@@ -1,26 +1,19 @@
 @import "../fonts/rivannanf.css";
 
-.rivanna {
-    font-family: 'RivannaNFRegular';
+html, body {
+    height: 100%;
 }
 
-.content {
-
-    border: 1px solid black;
-    margin:  0px auto;
-    padding: 0px;
-    position: relative;
-    width: 960px;
-    
-    -webkit-border-radius: 10px;
-    -moz-border-radius: 10px;
-    border-radius: 10px;
-
+.rivanna {
+    font-family: 'RivannaNFRegular';
 }
 
 div {
     display: block;
 }
+
+.size30 { font-size: 30px }
+.size60 { font-size: 60px }
 
 nav {
     font-family: 'RivannaNFRegular';
@@ -29,7 +22,12 @@ nav {
 }
 
 nav ul {
-    list-style-type: disc !important;
+    margin: 0;
+    padding: 0;
+}
+
+nav ul li:first-child {
+    border-left: 0px solid black;
 }
 
 nav li {
@@ -40,6 +38,25 @@ nav li {
 nav a {
     display: inline-block;
     padding: 10px;
+}
+
+#main_content {
+
+    border: 1px solid black;
+    margin:  auto;
+    padding: 10px;
+    position: relative;
+    width: 960px;
+    min-height: 75%;
+
+    -webkit-border-radius: 10px;
+    -moz-border-radius: 10px;
+    border-radius: 10px;
+
+}
+
+#banner {
+    text-align: center;
 }
 
 footer {
