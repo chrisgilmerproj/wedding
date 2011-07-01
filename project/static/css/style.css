@@ -1,0 +1,42 @@
+
+.content {
+
+    border: 1px solid black;
+    height: 400px;
+    margin:  0px auto;
+    padding: 0px;
+    position: relative;
+    text-align: center;
+    width: 960px;
+    
+    -webkit-border-radius: 10px;
+    -moz-border-radius: 10px;
+    border-radius: 10px;
+
+}
+
+div {
+    display: block;
+}
+
+nav {
+    text-align: center;
+}
+
+nav ul {
+    list-style-type: disc !important;
+}
+
+nav li {
+    border-left: 1px solid black;
+    display: inline;
+}
+
+nav a {
+    display: inline-block;
+    padding: 10px;
+}
+
+footer {
+    text-align: center;
+}

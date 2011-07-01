@@ -1,41 +1,44 @@
 <!doctype html>
 <html>
-	<head>
-		<title>{% block title %}{% endblock title %} | Chris and Megan</title>
-		<link rel="stylesheet" href="{{ STATIC_URL }}css/style.css">
-		<link rel="stylesheet" href="{{ STATIC_URL }}css/webfonts.css">
-		{% block extra_head %}
-		{% endblock extra_head %}
-	</head>
-	<body>
-		<nav>
-			<ul>
-				<li><a href="{% url home %}">Welcome</a></li>
-				<li><a href="{% url events %}">Events</a></li>
-				<li><a href="{% url lodging %}">Lodging</a></li>
-				<li><a href="{% url story %}">Our Story</a></li>
-				<li><a href="{% url gallery %}">Gallery</a></li>
-				<li><a href="{% url messages %}">Messages</a></li>
-				<li><a href="{% url registry %}">Gift Registry</a></li>
-				<li><a href="{% url contact %}">Contact</a></li>
-			</ul>
-		</nav>
-		{% block content %}
-		{% endblock content %}
+    <head>
+        <title>{% block title %}{% endblock title %} | Chris and Megan</title>
+        <link rel="stylesheet" href="{{ STATIC_URL }}css/style.css">
+        <link rel="stylesheet" href="{{ STATIC_URL }}css/webfonts.css">
+        {% block extra_head %}
+        {% endblock extra_head %}
+    </head>
+    <body>
+        <nav>
+            <ul>
+                <li><a href="{% url home %}">Welcome</a></li>
+                <li><a href="{% url events %}">Events</a></li>
+                <li><a href="{% url lodging %}">Lodging</a></li>
+                <li><a href="{% url story %}">Our Story</a></li>
+                <li><a href="{% url gallery %}">Gallery</a></li>
+                <li><a href="{% url messages %}">Messages</a></li>
+                <li><a href="{% url registry %}">Gift Registry</a></li>
+                <li><a href="{% url contact %}">Contact</a></li>
+            </ul>
+        </nav>
+        
+        <div class="content">
+        {% block content %}
+        {% endblock content %}
+        </div>
 
-		<footer>
-		{% block footer %}
-		<p>If you have a special request or question please <a href="{% url contact %}">contact us</a>!</p>
-		{% endblock footer %}
-		</footer>
+        <footer>
+        {% block footer %}
+        <p>If you have a special request or question please <a href="{% url contact %}">contact us</a>!</p>
+        {% endblock footer %}
+        </footer>
 
-  	</body>
+    </body>
 
-	<script type="text/javascript"> 
-		var gaJsHost = (("https:" == document.location.protocol) ? "https://" : "http://");
-		document.write(unescape("%3Cscript src='" + gaJsHost + "ajax.googleapis.com/ajax/libs/jquery/1.5/jquery.min.js' type='text/javascript'%3E%3C/script%3E"));
-	</script>
-	{% block extra_body %}
-	{% endblock extra_body %}
+    <script type="text/javascript"> 
+        var gaJsHost = (("https:" == document.location.protocol) ? "https://" : "http://");
+        document.write(unescape("%3Cscript src='" + gaJsHost + "ajax.googleapis.com/ajax/libs/jquery/1.5/jquery.min.js' type='text/javascript'%3E%3C/script%3E"));
+    </script>
+    {% block extra_body %}
+    {% endblock extra_body %}
   
 </html>
