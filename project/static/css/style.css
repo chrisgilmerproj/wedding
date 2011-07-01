@@ -1,12 +1,15 @@
+@import "../fonts/rivannanf.css";
+
+.rivanna {
+    font-family: 'RivannaNFRegular';
+}
 
 .content {
 
     border: 1px solid black;
-    height: 400px;
     margin:  0px auto;
     padding: 0px;
     position: relative;
-    text-align: center;
     width: 960px;
     
     -webkit-border-radius: 10px;
@@ -20,6 +23,8 @@ div {
 }
 
 nav {
+    font-family: 'RivannaNFRegular';
+    font-size: 24px;
     text-align: center;
 }
 

@@ -2,7 +2,7 @@
 
 {% load uni_form_tags %}
 
-{% block title %}Messages{% endblock title %}
+{% block title %}Contact Us{% endblock title %}
 
 {% block extra_head %}
 	<link rel="stylesheet" href="{{ STATIC_URL }}uni_form/uni-form.css" type="text/css" />
@@ -14,25 +14,41 @@
 {% endblock extra_body %}
 
 {% block content %}
-<p>Leave a message for the wedding couple</p>
-<form method="post" action="" class="uniForm">
-	{% csrf_token %}
-	{{ form|as_uni_form }}
-	<div class="form_block">
-		<input type="submit" value="Submit Message"/>
-	</div>
-	
-</form>
 
-{% if messages %}
-<ul>
-{% for message in messages %}
-<li>{{message.text}} - {{message.name}} on {{message.created}}</li>
-{% endfor %}
-</ul>
-{% else %}
-<p>No messages yet! Be the first!</p>
-{% endif %}
+<div id="registry">
+    <h2>Gift Registry</h2>
+	{% if wedding.registry_set.all %}
+	<p>We have registered at the following places:</p>
+	<ul>
+	{% for registry in wedding.registry_set.all %}
+	<li><a href="{{registry.url}}"><img src="{{registry.image}}"/></a></li>
+	{% endfor %}
+	</ul>
+	{% else %}
+	<p>We plan to register soon.</p>
+	{% endif %}
+</div>
 
+<div id="messages">
+    <p>Leave a message for the wedding couple</p>
+    <form method="post" action="" class="uniForm">
+    	{% csrf_token %}
+    	{{ form|as_uni_form }}
+    	<div class="form_block">
+    		<input type="submit" value="Submit Message"/>
+    	</div>
+    	
+    </form>
+    
+    {% if messages %}
+    <ul>
+    {% for message in messages %}
+    <li>{{message.text}} - {{message.name}} on {{message.created}}</li>
+    {% endfor %}
+    </ul>
+    {% else %}
+    <p>No messages yet! Be the first!</p>
+    {% endif %}
+</div>
 
 {% endblock %}

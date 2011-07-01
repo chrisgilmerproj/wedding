@@ -17,9 +17,7 @@ urlpatterns = patterns('',
     url(r'^lodging/$',  WeddingView.as_view(template_name='lodging.html'),  name="lodging"),
     url(r'^story/$',    WeddingView.as_view(template_name='story.html'),    name="story"),
     url(r'^gallery/$',  WeddingView.as_view(template_name='gallery.html'),  name="gallery"),
-	url(r'^messages/',  include('messages.urls')),
-    url(r'^registry/$', WeddingView.as_view(template_name='registry.html'), name="registry"),
-    url(r'^contact/$',  WeddingView.as_view(template_name='contact.html'),  name="contact"),
+	url(r'^contact/$',  'messages.views.messages', name='contact'),
 	url(r'^rsvp/',      include('rsvp.urls')),
 )
 
