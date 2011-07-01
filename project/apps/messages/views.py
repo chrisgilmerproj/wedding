@@ -19,7 +19,7 @@ def messages(request):
     else:
         form = MessageForm()
     
-    template_name = 'messages/messages.html'
+    template_name = 'contact.html'
     context = {
         'form': form,
         'messages': message_list,

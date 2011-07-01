@@ -7,28 +7,29 @@
         {% endblock extra_head %}
     </head>
     <body>
-        <nav>
-            <ul>
-                <li><a href="{% url home %}">Welcome</a></li>
-                <li><a href="{% url events %}">Events</a></li>
-                <li><a href="{% url lodging %}">Lodging</a></li>
-                <li><a href="{% url story %}">Our Story</a></li>
-                <li><a href="{% url gallery %}">Gallery</a></li>
-                <li><a href="{% url contact %}">Contact</a></li>
-            </ul>
-        </nav>
-        
-        <div id="main_content">
-        {% block content %}
-        {% endblock content %}
+        <div id="container">
+            <nav>
+                <ul>
+                    <li><a href="{% url home %}">Welcome</a></li>
+                    <li><a href="{% url events %}">Events</a></li>
+                    <li><a href="{% url lodging %}">Lodging</a></li>
+                    <li><a href="{% url story %}">Our Story</a></li>
+                    <li><a href="{% url gallery %}">Gallery</a></li>
+                    <li><a href="{% url contact %}">Contact</a></li>
+                </ul>
+            </nav>
+            
+            <div id="main_content">
+            {% block content %}
+            {% endblock content %}
+            </div>
+
+            <footer>
+            {% block footer %}
+            <p>If you have a special request or question please <a href="{% url contact %}">contact us</a>!</p>
+            {% endblock footer %}
+            </footer>
         </div>
-
-        <footer>
-        {% block footer %}
-        <p>If you have a special request or question please <a href="{% url contact %}">contact us</a>!</p>
-        {% endblock footer %}
-        </footer>
-
     </body>
 
     <script type="text/javascript"> 

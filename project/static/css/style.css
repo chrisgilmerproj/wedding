@@ -1,7 +1,23 @@
 @import "../fonts/rivannanf.css";
 
-html, body {
+/* Color Reference
+ *
+ * Using Triad:
+ * 392E1C: light brown
+ * 181628: dark blue
+ * 122520: dark green
+ * 251A09: dark brown
+ *
+ */
+
+html {
     height: 100%;
+}
+
+body {
+    background-color: #392E1C;
+    height: 100%;
+    margin: 0px;
 }
 
 .rivanna {
@@ -12,12 +28,32 @@ div {
     display: block;
 }
 
-.size30 { font-size: 30px }
-.size60 { font-size: 60px }
+a {
+    text-decoration: none;
+}
+
+a:link { 
+    color:#122520; 
+}
+
+a:visited,
+a:hover,
+a:active { 
+    color: #181628; 
+}
+
+#container {
+    background-color: white;
+    height: 100%;
+    margin:  0 auto;
+    padding: 0px;
+    position: relative;
+    width: 960px;
+}
 
 nav {
     font-family: 'RivannaNFRegular';
-    font-size: 24px;
+    font-size: 28px;
     text-align: center;
 }
 
@@ -42,11 +78,13 @@ nav a {
 
 #main_content {
 
+    background-color: #251A09;
     border: 1px solid black;
+    color: white;
     margin:  auto;
     padding: 10px;
     position: relative;
-    width: 960px;
+    width: 900px;
     min-height: 75%;
 
     -webkit-border-radius: 10px;
@@ -59,6 +97,15 @@ nav a {
     text-align: center;
 }
 
+#title { 
+    font-size: 72px 
+}
+
+#invitation { 
+    font-size: 36px 
+}
+
 footer {
     text-align: center;
 }
+
