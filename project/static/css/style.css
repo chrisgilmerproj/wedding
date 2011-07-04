@@ -87,56 +87,47 @@ nav a {
 #main_content {
 
     background-color: #E0BE7E;
+    border: 10px solid #848583;
     margin: auto;
     min-height: 100%;
-    padding: 10px;
+    padding: 0px;
     position: relative;
     width: 900px;
 
-    -webkit-border-radius: 10px;
-    -moz-border-radius: 10px;
-    border-radius: 10px;
+    -webkit-border-radius: 50px 50px 5px 5px / 50px 50px 5px 5px;
+    -moz-border-radius: 50px 50px 5px 5px / 50px 50px 5px 5px;
+    border-radius: 50px 50px 5px 5px / 50px 50px 5px 5px;
 }
 
 #outer {
-    background-color: white;
-    min-height: 700px;
-    margin: 100px 10px 10px 10px;
-    padding: 10px 10px 10px 10px;
-    position: relative;
-
-    -webkit-border-radius: 450px 450px 10px 10px / 150px 150px 10px 10px;
-    -moz-border-radius: 450px 450px 10px 10px / 150px 150px 10px 10px;
-    border-radius: 450px 450px 10px 10px / 150px 150px 10px 10px;
-}
-
-#inner {
     background-color: #E0BE7E;
-    margin: 10px;
-    min-height: 680px;
-    padding: 70px 0px 0px 0px;
+    border: 10px solid #848583;
+    min-height: 450px;
+    margin: 0px 0px 0px 0px;
+    padding: 150px 0px 0px 0px;
     position: relative;
 
-    -webkit-border-radius: 450px 450px 10px 10px / 130px 130px 10px 10px;
-    -moz-border-radius: 450px 450px 10px 10px / 130px 130px 10px 10px;
-    border-radius: 450px 450px 10px 10px / 130px 130px 10px 10px;
+    -webkit-border-radius: 300px 300px 0px 0px / 300px 300px 0px 0px;
+    -moz-border-radius: 300px 300px 0px 0px / 300px 300px 0px 0px;
+    border-radius: 300px 300px 0px 0px / 300px 300px 0px 0px;
 }
 
 #banner {
     color: #848583;
     text-align: center;
+    width: 450px;
 
     -webkit-text-stroke: 1px black;
     -moz-text-stroke: 1px black;
     text-stroke: 1px black;
 }
 
-#title { 
-    font-size: 72px 
+#title {
+    font-size: 72px;
 }
 
-#invitation { 
-    font-size: 36px 
+#invitation {
+    font-size: 36px;
 }
 
 footer {
