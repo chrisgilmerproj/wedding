@@ -1,3 +1,4 @@
+@import "../fonts/angelicwar.css";
 @import "../fonts/rivannanf.css";
 
 /* Color Reference
@@ -22,11 +23,16 @@
 
 html,
 body {
+    font-size: 28px;
     min-height: 100%;
 }
 
 body {
     background-color: #392E1C;
+}
+
+.angelicwar {
+    font-family: 'AngelicWarRegular';
 }
 
 .rivanna {
@@ -115,11 +121,13 @@ nav a {
 }
 
 #title {
+    font-family: 'RivannaNFRegular';
     font-size: 72px;
     margin: 10px;
 }
 
 #invitation {
+    font-family: 'RivannaNFRegular';
     font-size: 36px;
     margin: 10px;
 }
