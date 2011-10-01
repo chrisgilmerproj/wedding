@@ -1,7 +1,7 @@
 from django.contrib import admin
 from django import forms
 from easy_maps.widgets import AddressWithMapWidget
-from weddings.models import Wedding, Event, Registry, Lodging
+from weddings.models import Wedding, Event, EventType, Registry, Lodging
 
 class EventInline(admin.StackedInline):
 	extra = 0
@@ -12,6 +12,11 @@ class WeddingAdmin(admin.ModelAdmin):
 	list_display = ['bride','groom','contact_phone','contact_email','featured']
 
 admin.site.register(Wedding,WeddingAdmin)
+
+class EventTypeAdmin(admin.ModelAdmin):
+    list_display = ('name', 'slug')
+
+admin.site.register(EventType, EventTypeAdmin)
 
 class EventAdmin(admin.ModelAdmin):
 	list_display = ['wedding','name','date','venue',]

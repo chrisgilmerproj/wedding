@@ -3,14 +3,12 @@
 {% block title %}Welcome{% endblock title %}
 
 {% block content %}
-    <div id="banner" class="rivanna">
-        <div id="title">
-            {{wedding.bride}}<br/> &<br/> {{wedding.groom}}<br/>
-        </div>
-        <div id="invitation">
-            Request the honor of your presence at their marriage<br/>
-            Sunday the 21st of July, 2012<br/>
-            Reception to follow<br/>
-        </div>
+    <div id="title">
+        {{wedding.bride}}<br/> &<br/> {{wedding.groom}}<br/>
+    </div>
+    <div id="invitation">
+        Request the honor of your presence at their marriage<br/>
+        {{ceremony.date|date:"l \t\he jS o\f F, Y"}}<br/>
+        Reception to follow<br/>
     </div>
 {% endblock %}

@@ -2,7 +2,7 @@ from django.shortcuts import render_to_response, get_object_or_404
 from django.template import RequestContext
 from django.views.generic import DetailView,TemplateView
 
-from apps.weddings.models import Wedding
+from apps.weddings.models import Wedding, Event, EventType
 
 class WeddingView(TemplateView):
     
@@ -11,8 +11,15 @@ class WeddingView(TemplateView):
     def get_context_data(self,**kwargs):
         context = super(WeddingView, self).get_context_data(**kwargs)
         try:
-            context['wedding'] = Wedding.objects.get(featured=True)
+            wedding = Wedding.objects.get(featured=True)
+            ceremony = Event.objects.get(wedding=wedding,  type__slug='ceremony')
+            rehearsal = Event.objects.get(wedding=wedding, type__slug='rehearsal')
+            context['wedding'] = wedding
+            context['ceremony'] = ceremony
+            context['rehearsal'] = rehearsal
         except:
             context['wedding'] = None
+            context['ceremony'] = None
+            context['rehearsal'] = None
         return context
 
