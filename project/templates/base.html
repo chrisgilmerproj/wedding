@@ -19,10 +19,13 @@
                     <li><a href="{% url contact %}">Contact</a></li>
                 </ul>
             </nav>
-            
+
             <div id="main_content">
-            {% block content %}
-            {% endblock content %}
+                <div id="graphic"></div>
+                <div id="content">
+                    {% block content %}
+                    {% endblock content %}
+                </div>
             </div>
 
             <footer>

@@ -24,7 +24,7 @@
 html,
 body {
     font-family: 'Arial';
-    font-size: 28px;
+    font-size: 24px;
     min-height: 100%;
 }
 
@@ -38,6 +38,10 @@ body {
 
 .rivanna {
     font-family: 'RivannaNFRegular';
+    
+    -webkit-text-stroke: 1px black;
+    -moz-text-stroke: 1px black;
+    text-stroke: 1px black;
 }
 
 div {
@@ -63,7 +67,6 @@ a:active {
     height: 100%;
     margin:  0 auto;
     min-height: 100%;
-    padding: 0px;
     position: relative;
     width: 960px;
 }
@@ -78,8 +81,8 @@ nav {
 }
 
 nav ul {
-    margin: 0;
-    padding: 0;
+    margin: 0px;
+    padding: 0px;
 }
 
 nav ul li:first-child {
@@ -97,39 +100,42 @@ nav a {
 }
 
 #main_content {
+    height: 100%;
+    width: auto;
+}
 
+#graphic {
     background-image: url('/static/img/background.jpg');
-    background-repeat: no-repeat;
-    background-size: 800px auto;
+    background-size: 450px auto;
     border: 10px solid #848583;
-    color: #fff;
-    font-weight: bold;
-    height: 1040px;
-    margin: auto;
-    min-height: 100%;
-    padding: 0px;
-    position: relative;
-    width: 800px;
+    float: left;
+    height: 580px;
+    margin: 10px;
+    width: 450px;
 
-    -webkit-text-stroke: 1px black;
-    -moz-text-stroke: 1px black;
-    text-stroke: 1px black;
-    
     -webkit-border-radius: 50px 50px 50px 50px / 50px 50px 50px 50px;
     -moz-border-radius: 50px 50px 50px 50px / 50px 50px 50px 50px;
     border-radius: 50px 50px 50px 50px / 50px 50px 50px 50px;
 }
 
+#content {
+    float: right;
+    height: 580px;
+    margin: 10px;
+    min-height: 100%;
+    width: 450px;
+}
+
 #title {
     font-family: 'RivannaNFRegular';
     font-size: 72px;
-    margin: 20px;
+    margin: 10px;
     text-align: center;
 }
 
 #invitation {
     font-size: 36px;
-    margin: 20px;
+    margin: 10px;
     text-align: center;
 }
 
@@ -158,6 +164,7 @@ nav a {
 }
 
 footer {
+    clear: both;
     font-size: 20px;
     margin: 10px 20px 10px 20px;
     text-align: center;
