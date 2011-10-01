@@ -5,6 +5,7 @@
 {% block title %}Lodging{% endblock title %}
 
 {% block content %}
+<div id="lodging">
 	<h2>Lodging</h2>
 
 	{% if wedding.lodging_set.all %}
@@ -20,5 +21,6 @@
 	</ul>
 	{% else %}
 	<p>Check back here for more information about accomodations.</p>
-	{% endif %}
+    {% endif %}
+</div>
 {% endblock %}
