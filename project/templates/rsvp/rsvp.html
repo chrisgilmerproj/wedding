@@ -5,14 +5,16 @@
 {% block content %}
 <div id="rsvp">
     <h1>RSVP</h1>
+    <br/>
     <form action="." method="GET">
-    	<label for="q">Search for your reservation: </label>
+    	<label for="q" style="font-size: 30px;">Search for your reservation: </label>
     	<input type="text" name="q" value="{{ query|escape }}">
     	<input type="submit" value="Search">
     </form>
     {% if query %}
     	
-    	{% if groups %}
+        {% if groups %}
+        <br/>
     	<p>Party results for "{{ query|escape }}":</p>
     		<ul>
     		{% for group in groups %}

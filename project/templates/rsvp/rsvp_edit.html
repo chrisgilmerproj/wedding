@@ -4,11 +4,11 @@
 
 {% block content %}
 <div id="rsvp">
-    <h1>RSVP: {{group.name}}</h1>
+    <h1>RSVP</h1>
     <br/>
     <form method="post" action="">
     	{% csrf_token %}
-        <h2>Party</h2>
+        <h2>{{group.name}}</h2>
         {{ form.as_p }}
         {{ formset.management_form }}
         <h2>Guests</h2>
