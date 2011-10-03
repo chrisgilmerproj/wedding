@@ -8,30 +8,21 @@
 
 <div id="events">
 {% for event in wedding.event_set.all %}
-	<h2>{{event.name}}</h2>
+	<h2>{{event.type}}</h2>
 	<p>
-	To be held on {% if event.date %}{{event.date}}, 
-	only {{event.days_remaining}} days remaining!{% else %}TBD{%endif%}
+    {% if event.url %}<br/><a href="{{event.url}}">{{event.venue}}</a>{% endif %}
 	</p>
-	{% if event.venue %}
-		<p>
-		Location: {{event.venue}}
-		</p>
-		<p>
-			<a href="{{event.google_maps}}">{{event.address}}</a>
-			{% easy_map event.address 300 300 13 %}
-		</p>
-		<p>
-		For more information:
-		{% if event.phone %}{{event.phone}}{% endif %} 
-		{% if event.phone and event.email %}or{% endif%} 
-		{% if event.email %}{{event.email}}{% endif %}
-		{% if event.url %}<br/><a href="{{event.url}}">{{event.url}}</a>{% endif %}
-		</p>
-		<p>
-		<b>About {{event.venue}}:</b> {{event.about}}
-		</p>
-	{%endif%} 
+    {% if event.date %}
+	<p>
+    {{event.date|date:"D \t\he jS o\f F, Y"}}
+    </p>
+    {% else %}<p>TBD</p>{%endif%}
+	<p>
+    {% if event.phone %}{{event.phone}}{% endif %}
+    </p>
+    <p>
+    {% if event.email %}<a href="mailto:{{event.email}}">{{event.email}}</a>{% endif %}
+    </p>
 	<br/>
 {% endfor %}
 </div>

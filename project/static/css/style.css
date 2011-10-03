@@ -23,13 +23,12 @@
 
 html,
 body {
-    font-family: 'Arial';
+    background-color: #fff;
+    font-family: "Helvetica,
+                 Arial,
+                 sans-serif";
     font-size: 24px;
     min-height: 100%;
-}
-
-body {
-    background-color: #fff;
 }
 
 .angelicwar {
@@ -53,13 +52,25 @@ a {
 }
 
 a:link { 
-    color:#122520; 
+    color: #710c4c; 
 }
 
 a:visited,
 a:hover,
 a:active { 
-    color: #181628; 
+    color: #710c4c; 
+}
+
+h1 {
+    font-size: 40px;
+}
+
+h2 {
+    font-size: 36px;
+}
+
+p {
+    margin: 5px;
 }
 
 #container {
@@ -128,13 +139,13 @@ nav a {
 #title {
     font-family: 'RivannaNFRegular';
     font-size: 72px;
-    margin: 10px;
+    margin: 60px 10px 10px 10px;
     text-align: center;
 }
 
 #invitation {
     font-size: 36px;
-    margin: 10px;
+    margin: 100px 10px 10px 10px;
     text-align: center;
 }
 
