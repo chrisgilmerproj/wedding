@@ -19,7 +19,7 @@ class EventTypeAdmin(admin.ModelAdmin):
 admin.site.register(EventType, EventTypeAdmin)
 
 class EventAdmin(admin.ModelAdmin):
-	list_display = ['wedding','name','date','venue',]
+	list_display = ['wedding','type','date','venue',]
 	
 	class form(forms.ModelForm):
 		class Meta:

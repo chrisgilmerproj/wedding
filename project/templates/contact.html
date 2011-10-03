@@ -18,7 +18,7 @@
 <div id="registry">
     <h2>Gift Registry</h2>
 	{% if wedding.registry_set.all %}
-	<p>We have registered at the following places:</p>
+    <p>{{wedding.bride}} and {{wedding.groom}} have registered at the following places. Thank you for your generosity.</p>
 	<ul>
 	{% for registry in wedding.registry_set.all %}
 	<li><a href="{{registry.url}}"><img src="{{registry.image}}"/></a></li>

@@ -38,7 +38,6 @@ class Event(models.Model):
 
     wedding  = models.ForeignKey(Wedding)
     type     = models.ForeignKey(EventType)
-    name     = models.CharField(max_length=80)
     date     = models.DateTimeField(blank=True, null=True)
 
     # Contact Information
@@ -50,7 +49,7 @@ class Event(models.Model):
     about    = models.TextField(blank=True, null=True)
     
     def __unicode__(self):
-        return '%s: %s' % (self.wedding,self.name)
+        return '%s: %s' % (self.wedding,self.type.name)
 
     def days_remaining(self):
         return (self.date-datetime.now()).days

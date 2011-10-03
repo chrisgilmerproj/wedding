@@ -1,0 +1,81 @@
+[
+    {
+        "pk": 1,
+        "model": "weddings.wedding",
+        "fields": {
+            "bride_parents": "Gail and Peter Marsh",
+            "groom": "Chris P. Gilmer",
+            "bride": "Megan N. Marsh",
+            "featured": true,
+            "contact_email": "chris.gilmer@gmail.com",
+            "groom_parents": "Carol Y. Troyer and T. Scott Gilmer",
+            "contact_phone": "(303) 907-5277"
+        }
+    },
+    {
+        "pk": 1,
+        "model": "weddings.eventtype",
+        "fields": {
+            "name": "Wedding Ceremony",
+            "slug": "ceremony"
+        }
+    },
+    {
+        "pk": 2,
+        "model": "weddings.eventtype",
+        "fields": {
+            "name": "Rehearsal Dinner",
+            "slug": "rehearsal"
+        }
+    },
+    {
+        "pk": 1,
+        "model": "weddings.event",
+        "fields": {
+            "about": "",
+            "url": "http://www.firehouseoldsac.com/",
+            "address": "1112 Second Street, Sacramento, CA",
+            "venue": "The Firehouse Restaurant",
+            "phone": "916.442.4772",
+            "wedding": 1,
+            "date": "2012-07-22 18:00:00",
+            "type": 1,
+            "email": "info@FirehouseOldSac.com"
+        }
+    },
+    {
+        "pk": 2,
+        "model": "weddings.event",
+        "fields": {
+            "about": "",
+            "url": "http://ten22oldsac.com/",
+            "address": "1022 Second Street, Sacramento, CA",
+            "venue": "Ten22 Restaurant",
+            "phone": "916.441.2211",
+            "wedding": 1,
+            "date": "2012-07-28 18:00:00",
+            "type": 2,
+            "email": "info@Ten22oldsac.com"
+        }
+    },
+    {
+        "pk": 1,
+        "model": "weddings.registry",
+        "fields": {
+            "url": "http://www.crateandbarrel.com/Gift-Registry/Guest/View-Registry.aspx?grid=4735096",
+            "image": "http://www.crateandbarrel.com/assets/logo/Logo.gif",
+            "name": "Crate & Barrel",
+            "wedding": 1
+        }
+    },
+    {
+        "pk": 2,
+        "model": "weddings.registry",
+        "fields": {
+            "url": "http://www.surlatable.com/registry/giftRegistryList.jsp?id=20018951476",
+            "image": "http://www.surlatable.com/styles/images/logo.gif",
+            "name": "Sur La Table",
+            "wedding": 1
+        }
+    }
+]
