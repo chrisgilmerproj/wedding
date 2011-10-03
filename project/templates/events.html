@@ -8,9 +8,10 @@
 
 <div id="events">
 {% for event in wedding.event_set.all %}
-	<h2>{{event.type}}</h2>
+    <h1>{{event.type}}</h1>
+    <br/>
 	<p>
-    {% if event.url %}<br/><a href="{{event.url}}">{{event.venue}}</a>{% endif %}
+    {% if event.url %}<a href="{{event.url}}">{{event.venue}}</a>{% endif %}
 	</p>
     {% if event.date %}
 	<p>

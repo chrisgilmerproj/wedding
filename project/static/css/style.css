@@ -62,11 +62,13 @@ a:active {
 }
 
 h1 {
-    font-size: 40px;
+    font-family: 'RivannaNFRegular';
+    font-size: 60px;
 }
 
 h2 {
-    font-size: 36px;
+    font-family: 'RivannaNFRegular';
+    font-size: 48px;
 }
 
 p {
@@ -167,6 +169,10 @@ nav a {
 
 #registry {
     margin: 20px;
+}
+
+#reg_img {
+    margin: 40px;
 }
 
 #messages {

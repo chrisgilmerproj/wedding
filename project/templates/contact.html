@@ -16,14 +16,15 @@
 {% block content %}
 
 <div id="registry">
-    <h2>Gift Registry</h2>
+    <h1>Gift Registry</h1>
+    <br/>
 	{% if wedding.registry_set.all %}
-    <p>{{wedding.bride}} and {{wedding.groom}} have registered at the following places. Thank you for your generosity.</p>
-	<ul>
+    <p>The wedding couple has registered at the following establishments. Thank you from our hearts for your generosity.</p>
 	{% for registry in wedding.registry_set.all %}
-	<li><a href="{{registry.url}}"><img src="{{registry.image}}"/></a></li>
+        <div id="reg_img">
+        <a href="{{registry.url}}"><img src="{{registry.image}}"/></a>
+        </div>
 	{% endfor %}
-	</ul>
 	{% else %}
 	<p>We plan to register soon.</p>
 	{% endif %}
