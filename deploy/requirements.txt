@@ -10,14 +10,6 @@ pygments          # for syntax color in docutils
 -e git+git://github.com/ff0000/red-fab-deploy.git#egg=red-fab-deploy
 -e git+git://github.com/apache/libcloud.git@trunk#egg=libcloud
 
-#--- Databases
-django-uni-form
-
 #--- Maps
 geopy
 django-easy-maps
-
-#--- Admin
-# django-grappelli == 2.3
-# -e hg+http://bitbucket.org/izi/django-admin-tools@v0.4.0#egg=admin-tools
-# feedparser

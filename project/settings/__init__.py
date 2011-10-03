@@ -46,7 +46,6 @@ INSTALLED_APPS = (
 	'messages',
 	'rsvp',
 	'weddings',
-	'uni_form',
 )
 
 # The language code for this installation

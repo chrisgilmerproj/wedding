@@ -3,25 +3,27 @@
 {% block title %}RSVP{% endblock title %}
 
 {% block content %}
-<form action="." method="GET">
-	<label for="q">Search: </label>
-	<input type="text" name="q" value="{{ query|escape }}">
-	<input type="submit" value="Search">
-</form>
-{% if query %}
-	
-	{% if groups %}
-	<h2>Party results for "{{ query|escape }}":</h2>
-		<ul>
-		{% for group in groups %}
-			<li><a href="{{group.get_absolute_url}}">{{ group|escape }}</a></l1>
-		{% endfor %}
-		</ul>
-	{% else %}
-	<p>Sorry, no reservation matching "{{query|escape}}" was found.</p>
-	{% endif %}
-{% endif %}
-
+<div id="rsvp">
+    <h1>RSVP</h1>
+    <form action="." method="GET">
+    	<label for="q">Search for your reservation: </label>
+    	<input type="text" name="q" value="{{ query|escape }}">
+    	<input type="submit" value="Search">
+    </form>
+    {% if query %}
+    	
+    	{% if groups %}
+    	<p>Party results for "{{ query|escape }}":</p>
+    		<ul>
+    		{% for group in groups %}
+    			<li><a href="{{group.get_absolute_url}}">{{ group|escape }}</a></l1>
+    		{% endfor %}
+    		</ul>
+    	{% else %}
+    	<p>Sorry, no reservation matching "{{query|escape}}" was found.</p>
+    	{% endif %}
+    {% endif %}
+</div>
 {% endblock %}
 
 {% block footer %}

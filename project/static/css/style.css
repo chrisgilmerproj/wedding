@@ -76,6 +76,11 @@ p {
     margin: 5px;
 }
 
+form {
+    font-size: 16px;
+    margin: 20px;
+}
+
 #container {
     height: 100%;
     margin:  0 auto;
@@ -173,10 +178,14 @@ nav a {
 }
 
 #reg_img {
-    margin: 40px;
+    margin: 20px;
 }
 
 #messages {
+    margin: 20px;
+}
+
+#rsvp {
     margin: 20px;
 }
 

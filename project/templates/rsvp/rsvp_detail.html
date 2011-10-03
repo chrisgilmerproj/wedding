@@ -3,19 +3,23 @@
 {% block title %}RSVP Detail{% endblock title %}
 
 {% block content %}
-<h2>RSVP for {{group.name}}'s party</h2>
-<a href="{% url rsvp_edit pk=group.pk %}">Edit the RSVP for {{group}}</a>
+<div id="rsvp">
+    <h1>RSVP: {{group.name}}</h1>
+    <p>
+    <a href="{% url rsvp_edit pk=group.pk %}">Edit the RSVP for {{group}}</a>
+    </p>
 
-<ul>
-	<li>Your Response: {{group.get_response_display}}</li>
-	<li>Your Party: {{group.get_party_display}}</li>
-	<li>Your Contact Info: {{group.email}}{% if group.email and group.phone %} and {%endif%}{{group.phone}}
-</ul>
-
-<p>We expect {{group.number_guests}} guest{{group.number_guests|pluralize}} in your party. They are:</p>
-<ul>
-{% for guest in group.guest_set.all %}
-<li>{{guest}}</li>
-{% endfor %}
-</ul>
+    <ul>
+    	<li>Response: {{group.get_response_display}}</li>
+    	<li>Party: {{group.get_party_display}}</li>
+    	<li>Contact Info: {{group.email}}{% if group.email and group.phone %} and {%endif%}{{group.phone}}
+    </ul>
+    
+    <p>We expect {{group.number_guests}} guest{{group.number_guests|pluralize}} in your party:</p>
+    <ul>
+    {% for guest in group.guest_set.all %}
+    <li>{{guest}}</li>
+    {% endfor %}
+    </ul>
+</div>
 {% endblock %}

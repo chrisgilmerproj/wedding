@@ -1,25 +1,16 @@
 {% extends "base.html" %}
 
-{% load uni_form_tags %}
-
 {% block title %}Contact Us{% endblock title %}
-
-{% block extra_head %}
-	<link rel="stylesheet" href="{{ STATIC_URL }}uni_form/uni-form.css" type="text/css" />
-	<link rel="stylesheet" href="{{ STATIC_URL }}uni_form/default.uni-form.css" type="text/css" />
-{% endblock extra_head %}
-
-{% block extra_body %}
-	<script src="{{ STATIC_URL }}uni_form/uni-form.jquery.js" type="text/javascript"></script>
-{% endblock extra_body %}
 
 {% block content %}
 
 <div id="registry">
-    <h1>Gift Registry</h1>
+    <h1>Contact Us</h1>
+    <br/>
+
+    <h2>Gift Registry</h2>
     <br/>
 	{% if wedding.registry_set.all %}
-    <p>The wedding couple has registered at the following establishments. Thank you from our hearts for your generosity.</p>
 	{% for registry in wedding.registry_set.all %}
         <div id="reg_img">
         <a href="{{registry.url}}"><img src="{{registry.image}}"/></a>
@@ -27,15 +18,23 @@
 	{% endfor %}
 	{% else %}
 	<p>We plan to register soon.</p>
-	{% endif %}
+    {% endif %}
+
+    <h2>Info</h2>
+    <br/>
+    <p>
+        Contact us at {{wedding.contact_phone}} or 
+        <a href="mailto:{{wedding.contact_email}}">{{wedding.contact_email}}</a> 
+        with any requests or questions.</p>
+
 </div>
 
 <!--
 <div id="messages">
     <p>Leave a message for the wedding couple</p>
-    <form method="post" action="" class="uniForm">
+    <form method="post" action="">
     	{% csrf_token %}
-    	{{ form|as_uni_form }}
+    	{{ form.as_p }}
     	<div class="form_block">
     		<input type="submit" value="Submit Message"/>
     	</div>
