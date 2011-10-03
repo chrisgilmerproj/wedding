@@ -5,8 +5,12 @@
 {% block content %}
 <div id="rsvp">
     <h1>RSVP: {{group.name}}</h1>
+    <br/>
+
+    <h2>Party</h2>
+    <br/>
     <p>
-    <a href="{% url rsvp_edit pk=group.pk %}">Edit the RSVP for {{group}}</a>
+    <a href="{% url rsvp_edit pk=group.pk %}">Edit the RSVP for this party</a>
     </p>
 
     <ul>
@@ -14,7 +18,9 @@
     	<li>Party: {{group.get_party_display}}</li>
     	<li>Contact Info: {{group.email}}{% if group.email and group.phone %} and {%endif%}{{group.phone}}
     </ul>
-    
+
+    <h2>Guests</h2>
+    <br/>
     <p>We expect {{group.number_guests}} guest{{group.number_guests|pluralize}} in your party:</p>
     <ul>
     {% for guest in group.guest_set.all %}

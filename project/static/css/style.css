@@ -76,9 +76,17 @@ p {
     margin: 5px;
 }
 
+ul {
+    list-style-type: circle;
+    margin: 20px;
+}
+
+li {
+    padding-left: 10px;
+}
+
 form {
     font-size: 16px;
-    margin: 20px;
 }
 
 #container {
