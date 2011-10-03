@@ -3,6 +3,7 @@
         "pk": 1,
         "model": "weddings.wedding",
         "fields": {
+            "story": "Megan and Chris met as roommates in 2007 at USC.  They soon fell in love and thus the happy story began.  In April of 2011 Chris proposed to Megan in Alameda Park in Santa Barbara, CA near the historic and beautiful Simpson House Inn where they were staying.",
             "bride_parents": "Gail and Peter Marsh",
             "groom": "Chris P. Gilmer",
             "bride": "Megan N. Marsh",
