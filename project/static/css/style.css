@@ -126,8 +126,9 @@ nav a {
 }
 
 #main_content {
+    display: inline-block;
     height: 100%;
-    width: auto;
+    width: 960px;
 }
 
 #graphic {
@@ -200,7 +201,7 @@ nav a {
 footer {
     clear: both;
     font-size: 20px;
-    margin: 10px 20px 10px 20px;
+    margin: 10px;
     text-align: center;
 }
 
