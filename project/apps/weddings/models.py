@@ -16,6 +16,8 @@ class Wedding(models.Model):
     groom             = models.CharField(max_length=80,blank=True)
     groom_parents     = models.CharField(max_length=80,blank=True)
 
+    story             = models.TextField(blank=True)
+
     def __unicode__(self):
         return '%s and %s Wedding' % (self.bride,self.groom)
     
