@@ -134,3 +134,9 @@ USE_I18N = False
 
 # Display numbers and dates using the format of the current locale
 USE_L10N = False
+
+# Import local settings
+try:
+    from settings.local_settings import *
+except ImportError:
+    print 'Unable to import local_settings.py. Skipped.'
