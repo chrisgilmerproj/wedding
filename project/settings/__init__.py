@@ -137,7 +137,6 @@ USE_L10N = False
 
 # Import local settings
 try:
-    from local_settings import *
+    from settings.local_settings import *
 except ImportError:
     print 'Unable to import local_settings.py. Skipped.'
-
