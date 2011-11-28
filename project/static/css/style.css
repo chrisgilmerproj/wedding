@@ -132,7 +132,7 @@ nav a {
 }
 
 #graphic {
-    background-image: url('/static/img/background.jpg');
+    background-image: url('/static/img/background_small.jpg');
     background-size: 450px auto;
     border: 10px solid #848583;
     float: left;
