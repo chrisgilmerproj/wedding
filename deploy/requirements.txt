@@ -6,9 +6,9 @@ docutils          # for django admindocs
 pygments          # for syntax color in docutils
 
 #--- Deploy with fabric
--e git+git://github.com/bitprophet/fabric.git#egg=fabric
--e git+git://github.com/ff0000/red-fab-deploy.git#egg=red-fab-deploy
--e git+git://github.com/apache/libcloud.git@trunk#egg=libcloud
+#-e git+git://github.com/bitprophet/fabric.git#egg=fabric
+#-e git+git://github.com/ff0000/red-fab-deploy.git#egg=red-fab-deploy
+#-e git+git://github.com/apache/libcloud.git@trunk#egg=libcloud
 
 #--- Maps
 geopy
