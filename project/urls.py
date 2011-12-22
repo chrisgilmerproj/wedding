@@ -1,23 +1,23 @@
 from django.conf import settings
-from django.conf.urls.defaults import *
-from django.conf.urls.static import static
+from django.conf.urls.defaults import include, patterns, url
 from django.contrib import admin
 from django.contrib.staticfiles.urls import staticfiles_urlpatterns
 from django.views.generic import TemplateView
 
 
 admin.autodiscover()
+
 urlpatterns = patterns('',
     (r'^admin/doc/', include('django.contrib.admindocs.urls')),
     (r'^admin/', include(admin.site.urls)),
-    
-    url(r'^$',          TemplateView.as_view(template_name='homepage.html'), name="home"),
-    url(r'^events/$',   TemplateView.as_view(template_name='events.html'),   name="events"),
-    url(r'^lodging/$',  TemplateView.as_view(template_name='lodging.html'),  name="lodging"),
-    url(r'^story/$',    TemplateView.as_view(template_name='story.html'),    name="story"),
-    url(r'^gallery/$',  TemplateView.as_view(template_name='gallery.html'),  name="gallery"),
-	url(r'^contact/$',  'messages.views.messages', name='contact'),
-	url(r'^rsvp/',      include('rsvp.urls')),
+
+    url(r'^$', TemplateView.as_view(template_name='homepage.html'), name="home"),
+    url(r'^events/$', TemplateView.as_view(template_name='events.html'), name="events"),
+    url(r'^lodging/$', TemplateView.as_view(template_name='lodging.html'), name="lodging"),
+    url(r'^story/$', TemplateView.as_view(template_name='story.html'), name="story"),
+    url(r'^gallery/$', TemplateView.as_view(template_name='gallery.html'), name="gallery"),
+    url(r'^contact/$', 'messages.views.messages', name='contact'),
+    url(r'^rsvp/', include('rsvp.urls')),
 )
 
 # Static URLs
