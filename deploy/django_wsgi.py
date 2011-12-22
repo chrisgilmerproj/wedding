@@ -1,4 +1,6 @@
-import os, sys
+import os
+import sys
+
 PATH = os.path.join(os.path.dirname(__file__), '..')
 sys.path += [
 	os.path.join(PATH, 'project/apps'), 
