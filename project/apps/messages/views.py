@@ -5,20 +5,21 @@ from apps.messages.forms import MessageForm
 from apps.messages.models import Message
 from apps.weddings.models import Wedding
 
+
 def messages(request):
     """ View to leave a message and see everyone's messages """
-    
+
     wedding = Wedding.objects.get(featured=True)
     message_list = Message.objects.all()
 
     if request.method == "POST":
         form = MessageForm(request.POST)
-        if form.is_valid(): 
+        if form.is_valid():
             form.save()
             form = MessageForm()
     else:
         form = MessageForm()
-    
+
     template_name = 'contact.html'
     context = {
         'form': form,
@@ -30,4 +31,3 @@ def messages(request):
         context,
         context_instance=RequestContext(request)
         )
-
