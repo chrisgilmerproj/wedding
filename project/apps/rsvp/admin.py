@@ -15,7 +15,7 @@ admin.site.register(Guest,GuestAdmin)
 class GroupAdmin(admin.ModelAdmin):
 	fieldsets = (
 		(None, {
-			'fields': ('name','response','party',)
+			'fields': ('name','response','party','code',)
 			}),
 		('Contact Information', {
 			'fields': ('email','phone','address',
@@ -30,7 +30,7 @@ class GroupAdmin(admin.ModelAdmin):
 			}),
 		)
 	inlines       = [GuestInline,]
-	list_display  = ['name','response','party','email','phone','number_guests',
+	list_display  = ['name','code','response','party','email','phone','number_guests',
 			'announcement_required','invitation_required','thank_you_required',]
 	list_editable = ['number_guests',
 			'announcement_required','invitation_required','thank_you_required',]

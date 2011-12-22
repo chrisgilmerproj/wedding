@@ -7,10 +7,10 @@ from apps.rsvp.forms import GroupForm
 from apps.rsvp.models import Group,Guest
 
 def rsvp(request):
-	query = request.GET.get('q','')
+	query = request.GET.get('q','').upper()
 
 	if query:
-		groups = Group.objects.filter(name__icontains=query,invitation_required=True)
+		groups = Group.objects.filter(code=q,invitation_required=True)
 	else:
 		groups = []
 	
@@ -26,8 +26,8 @@ def rsvp(request):
 		)
 
 def rsvp_detail(request,**kwargs):
-	group_id = kwargs.get('pk',None)
-	group = get_object_or_404(Group,pk=group_id)
+	code = kwargs.get('code',None).upper()
+	group = get_object_or_404(Group,code=code)
 
 	template_name = 'rsvp/rsvp_detail.html'
 	context = {
@@ -40,8 +40,8 @@ def rsvp_detail(request,**kwargs):
 		)
 
 def rsvp_edit(request,**kwargs):
-	group_id = kwargs.get('pk',None)
-	group = get_object_or_404(Group,pk=group_id)
+	code = kwargs.get('code',None).upper()
+	group = get_object_or_404(Group,code=code)
 
 	GuestInlineFormSet = inlineformset_factory(Group,Guest,
 			extra=group.number_guests, max_num=group.number_guests)
