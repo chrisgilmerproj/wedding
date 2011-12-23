@@ -19,7 +19,7 @@ admin.site.register(Guest, GuestAdmin)
 class GroupAdmin(admin.ModelAdmin):
     fieldsets = (
         (None, {
-            'fields': ('name', 'response', 'party', 'code', )
+            'fields': ('name', 'response', 'party', )
             }),
         ('Contact Information', {
             'fields': ('email', 'phone', 'address',
