@@ -1,4 +1,5 @@
 from django.forms.models import inlineformset_factory
+from django.http import Http404
 from django.shortcuts import render_to_response, get_object_or_404, redirect
 from django.template import RequestContext
 
@@ -69,3 +70,26 @@ def rsvp_edit(request, **kwargs):
         context,
         context_instance=RequestContext(request)
         )
+
+
+def stats(request):
+
+    if not request.user.is_staff:
+        raise Http404
+
+    template_name = 'rsvp/stats.html'
+    context = {
+        'bride_no_response': Group.objects.filter(party=0, response=0).count(),
+        'bride_attending': Group.objects.filter(party=0, response=1).count(),
+        'bride_not_attending': Group.objects.filter(party=0, response=2).count(),
+        'groom_no_response': Group.objects.filter(party=1, response=0).count(),
+        'groom_attending': Group.objects.filter(party=1, response=1).count(),
+        'groom_not_attending': Group.objects.filter(party=1, response=2).count(),
+    }
+    return render_to_response(
+        template_name,
+        context,
+        context_instance=RequestContext(request)
+        )
+
+

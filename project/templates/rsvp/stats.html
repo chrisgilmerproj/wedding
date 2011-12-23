@@ -1,0 +1,30 @@
+{% extends "base.html" %}
+
+{% block title %}RSVP{% endblock title %}
+
+{% block content %}
+<div id="rsvp">
+    <h1>Stats</h1>
+    <br/>
+    <h2>Bride</h2>
+        <ul>
+            <li>No Response:   {{bride_no_response}}</li>
+            <li>Attending:     {{bride_attending}}</li>
+            <li>Not Attending: {{bride_not_attending}}</li>
+        </ul>
+    <br/>
+    <h2>Groom</h2>
+        <ul>
+            <li>No Response:   {{groom_no_response}}</li>
+            <li>Attending:     {{groom_attending}}</li>
+            <li>Not Attending: {{groom_not_attending}}</li>
+        </ul>
+    <br/>
+    <h2>Total</h2>
+        <ul>
+            <li>No Response:   {{bride_no_response|add:groom_no_response}}</li>
+            <li>Attending:     {{bride_attending|add:groom_attending}}</li>
+            <li>Not Attending: {{bride_not_attending|add:groom_not_attending}}</li>
+        </ul>
+</div>
+{% endblock %}
