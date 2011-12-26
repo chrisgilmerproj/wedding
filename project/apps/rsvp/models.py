@@ -75,9 +75,16 @@ class Group(models.Model):
 class Guest(models.Model):
     """ Capture information about each guest """
 
+    MEAL_CHOICES = (
+        (0, 'Meat'),
+        (1, 'Fish'),
+        (2, 'Veggie'),
+    )
+
     group = models.ForeignKey(Group)
     first_name = models.CharField(max_length=30)
     last_name = models.CharField(max_length=30)
+    meal = models.IntegerField(choices=MEAL_CHOICES, default=0)
 
     def __unicode__(self):
         return u"%s %s" % (self.first_name, self.last_name)
