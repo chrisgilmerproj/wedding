@@ -11,7 +11,7 @@
     <h1>{{event.type}}</h1>
     <br/>
 	<p>
-    {% if event.url %}<a href="{{event.url}}">{{event.venue}}</a>{% endif %}
+    {% if event.url %}<a href="{{event.url}}">{{event.venue}}</a>{% else %}{{event.venue}}{% endif %}
 	</p>
     {% if event.date %}
 	<p>
