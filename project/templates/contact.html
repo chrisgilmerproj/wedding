@@ -8,24 +8,11 @@
     <h1>Contact Us</h1>
     <br/>
 
-    <h2>Gift Registry</h2>
-    <br/>
-	{% if wedding.registry_set.all %}
-	{% for registry in wedding.registry_set.all %}
-        <div id="reg_img">
-        <a href="{{registry.url}}"><img src="{{registry.image}}"/></a>
-        </div>
-	{% endfor %}
-	{% else %}
-	<p>We plan to register soon.</p>
-    {% endif %}
-
-    <h2>Info</h2>
-    <br/>
     <p>
         Contact us at {{wedding.contact_phone}} or 
         <a href="mailto:{{wedding.contact_email}}">{{wedding.contact_email}}</a> 
-        with any requests or questions.</p>
+        with any requests or questions.
+    </p>
 
 </div>
 
