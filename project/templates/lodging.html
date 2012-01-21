@@ -19,8 +19,8 @@
         {% for lodge in wedding.lodging_set.all %}
         <li>
             <a href="{{lodge.url}}">{{lodge.name}}</a><br/>
-            <a href="{{lodge.google_maps}}">{{lodge.address}}</a>
             {% easy_map lodge.address 300 300 13 %}
+			<a href="{{lodge.google_maps}}">{{lodge.address}}</a><br/><br/>
         </li>
         {% endfor %}
     </ul>
