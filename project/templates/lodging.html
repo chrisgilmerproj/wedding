@@ -13,14 +13,15 @@
     <p>
         We have arranged accomodations at the following hotels.
         Please <a href="{% url contact %}">contact us</a> for
-        information on special rates.
+        information on reserved rooms.
     </p>
     <ul>
         {% for lodge in wedding.lodging_set.all %}
         <li>
             <a href="{{lodge.url}}">{{lodge.name}}</a><br/>
+            Phone: {{lodge.phone}}<br/>
             {% easy_map lodge.address 300 300 13 %}
-			<a href="{{lodge.google_maps}}">{{lodge.address}}</a><br/><br/>
+            <a href="{{lodge.google_maps}}">{{lodge.address}}</a><br/><br/>
         </li>
         {% endfor %}
     </ul>
