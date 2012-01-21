@@ -6,22 +6,26 @@
 
 {% block content %}
 <div id="lodging">
-	<h1>Lodging</h1>
+    <h1>Lodging</h1>
     <br/>
 
-	{% if wedding.lodging_set.all %}
-	<p>We have set up the following accomodations:</p>
-	<ul>
-		{% for lodge in wedding.lodging_set.all %}
+    {% if wedding.lodging_set.all %}
+    <p>
+        We have arranged accomodations at the following hotels.
+        Please <a href="{% url contact %}">contact us</a> for
+        information on special rates.
+    </p>
+    <ul>
+        {% for lodge in wedding.lodging_set.all %}
         <li>
             <a href="{{lodge.url}}">{{lodge.name}}</a><br/>
-			<a href="{{lodge.google_maps}}">{{lodge.address}}</a>
-			{% easy_map lodge.address 300 300 13 %}
-		</li>
-		{% endfor %}
-	</ul>
-	{% else %}
-	<p>Check back here for more information about accomodations.</p>
+            <a href="{{lodge.google_maps}}">{{lodge.address}}</a>
+            {% easy_map lodge.address 300 300 13 %}
+        </li>
+        {% endfor %}
+    </ul>
+    {% else %}
+    <p>Check back here for more information about accomodations.</p>
     {% endif %}
 </div>
 {% endblock %}
