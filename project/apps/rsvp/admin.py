@@ -35,11 +35,14 @@ class GroupAdmin(admin.ModelAdmin):
         )
     inlines = [GuestInline]
     list_display = ['name', 'code', 'response', 'party',
-            'address', 'city', 'state', 'zipcode', 
+            'announcement_sent', 'invitation_sent',
+            #'address', 'city', 'state', 'zipcode', 
             'number_guests', ]
             #'announcement_required', 'invitation_required', 'thank_you_required', ]
-    list_editable = ['number_guests', ]
-            #'announcement_required', 'invitation_required', 'thank_you_required', ]
+    list_editable = ['number_guests',
+            'announcement_sent', 'invitation_sent',
+            #'announcement_required', 'invitation_required', 'thank_you_required', 
+            ]
     list_filter = ['response', 'party',
             'announcement_required', 'invitation_required', 'thank_you_required', ]
     search_fields = ['name', 'gift_received', ]
