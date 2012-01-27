@@ -79,15 +79,23 @@ def stats(request):
 
     template_name = 'rsvp/stats.html'
     context = {
+        'bride_no_response_num': Guest.objects.filter(group__party=0, group__response=0).count(),
         'bride_no_response': Group.objects.filter(party=0, response=0).count(),
+        'bride_attending_num': Guest.objects.filter(group__party=0, group__response=1).count(),
         'bride_attending': Group.objects.filter(party=0, response=1).count(),
+        'bride_not_attending_num': Guest.objects.filter(group__party=0, group__response=2).count(),
         'bride_not_attending': Group.objects.filter(party=0, response=2).count(),
+
+        'groom_no_response_num': Guest.objects.filter(group__party=1, group__response=0).count(),
         'groom_no_response': Group.objects.filter(party=1, response=0).count(),
+        'groom_attending_num': Guest.objects.filter(group__party=1, group__response=1).count(),
         'groom_attending': Group.objects.filter(party=1, response=1).count(),
+        'groom_not_attending_num': Guest.objects.filter(group__party=1, group__response=2).count(),
         'groom_not_attending': Group.objects.filter(party=1, response=2).count(),
-        'meat': Guest.objects.filter(meal=0).count(),
-        'fish': Guest.objects.filter(meal=1).count(),
-        'veggie': Guest.objects.filter(meal=2).count(),
+
+        'meat': Guest.objects.filter(group__response=1, meal=0).count(),
+        'fish': Guest.objects.filter(group__response=1, meal=1).count(),
+        'veggie': Guest.objects.filter(group__response=1, meal=2).count(),
     }
     return render_to_response(
         template_name,
