@@ -6,26 +6,34 @@
 <div id="rsvp">
     <h1>Stats</h1>
     <br/>
-    <h2>Bride</h2>
-        <ul>
-            <li>No Response:   {{bride_no_response_num}}/{{bride_no_response}}</li>
-            <li>Attending:     {{bride_attending_num}}/{{bride_attending}}</li>
-            <li>Not Attending: {{bride_not_attending_num}}/{{bride_not_attending}}</li>
-        </ul>
-    <br/>
-    <h2>Groom</h2>
-        <ul>
-            <li>No Response:   {{groom_no_response_num}}/{{groom_no_response}}</li>
-            <li>Attending:     {{groom_attending_num}}/{{groom_attending}}</li>
-            <li>Not Attending: {{groom_not_attending_num}}/{{groom_not_attending}}</li>
-        </ul>
-    <br/>
-    <h2>Total</h2>
-        <ul>
-            <li>No Response:   {{bride_no_response_num|add:groom_no_response_num}}/{{bride_no_response|add:groom_no_response}}</li>
-            <li>Attending:     {{bride_attending_num|add:groom_attending_num}}/{{bride_attending|add:groom_attending}}</li>
-            <li>Not Attending: {{bride_not_attending_num|add:groom_not_attending_num}}/{{bride_not_attending|add:groom_not_attending}}</li>
-        </ul>
+    <table>
+        <tr>
+            <th></th>
+            <th>No Response</th>
+            <th>Attending</th>
+            <th>Not Attending</th>
+        </tr>
+        <tr>
+        </tr>
+        <tr>
+            <td>Bride</td>
+            <td>{{bride_no_response_num}}/{{bride_no_response}}</td>
+            <td>{{bride_attending_num}}/{{bride_attending}}</td>
+            <td>{{bride_not_attending_num}}/{{bride_not_attending}}</td>
+        </tr>
+        <tr>
+            <td>Groom</td>
+            <td>{{groom_no_response_num}}/{{groom_no_response}}</td>
+            <td>{{groom_attending_num}}/{{groom_attending}}</td>
+            <td>{{groom_not_attending_num}}/{{groom_not_attending}}</td>
+        </tr>
+        <tr>
+            <td>Total</td>
+            <td>{{bride_no_response_num|add:groom_no_response_num}}/{{bride_no_response|add:groom_no_response}}</td>
+            <td>{{bride_attending_num|add:groom_attending_num}}/{{bride_attending|add:groom_attending}}</td>
+            <td>{{bride_not_attending_num|add:groom_not_attending_num}}/{{bride_not_attending|add:groom_not_attending}}</td>
+        </tr>
+    </table>
     <br/>
     <h2>Meals</h2>
         <ul>
