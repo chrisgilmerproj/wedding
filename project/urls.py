@@ -18,6 +18,7 @@ urlpatterns = patterns('',
     url(r'^registry/$', TemplateView.as_view(template_name='registry.html'), name="registry"),
     url(r'^contact/$', 'messages.views.messages', name='contact'),
     url(r'^rsvp/', include('rsvp.urls')),
+    url(r'^RSVP/', include('rsvp.urls')),
 )
 
 # Static URLs
