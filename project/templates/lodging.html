@@ -12,8 +12,6 @@
     {% if wedding.lodging_set.all %}
     <p>
         We recommend accomodations at the following hotels.
-        Please <a href="{% url contact %}">contact us</a> for
-        information on rooms.
     </p>
     <ul>
         {% for lodge in wedding.lodging_set.all %}

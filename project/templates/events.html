@@ -15,8 +15,11 @@
 	</p>
     {% if event.date %}
 	<p>
-    {{event.date|date:"D \t\he jS o\f F, Y"}}
-    </p>
+        {{event.date|date:"D \t\he jS o\f F, Y"}}
+	</p>
+	<p>
+        at {{event.date|date:"g:i A"}}
+        </p>
     {% else %}<p>TBD</p>{%endif%}
 	<p>
     {% if event.phone %}{{event.phone}}{% endif %}
