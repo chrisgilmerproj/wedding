@@ -12,6 +12,7 @@
             <th>No Response</th>
             <th>Attending</th>
             <th>Not Attending</th>
+            <th>Ceremony Only</th>
         </tr>
         <tr>
         </tr>
@@ -20,18 +21,21 @@
             <td>{{bride_no_response_num}}/{{bride_no_response}}</td>
             <td>{{bride_attending_num}}/{{bride_attending}}</td>
             <td>{{bride_not_attending_num}}/{{bride_not_attending}}</td>
+            <td>{{bride_ceremony_only_num}}/{{bride_ceremony_only}}</td>
         </tr>
         <tr>
             <td>Groom</td>
             <td>{{groom_no_response_num}}/{{groom_no_response}}</td>
             <td>{{groom_attending_num}}/{{groom_attending}}</td>
             <td>{{groom_not_attending_num}}/{{groom_not_attending}}</td>
+            <td>{{groom_ceremony_only_num}}/{{groom_ceremony_only}}</td>
         </tr>
         <tr>
             <td>Total</td>
             <td>{{bride_no_response_num|add:groom_no_response_num}}/{{bride_no_response|add:groom_no_response}}</td>
             <td>{{bride_attending_num|add:groom_attending_num}}/{{bride_attending|add:groom_attending}}</td>
             <td>{{bride_not_attending_num|add:groom_not_attending_num}}/{{bride_not_attending|add:groom_not_attending}}</td>
+            <td>{{bride_ceremony_only_num|add:groom_ceremony_only_num}}/{{bride_ceremony_only|add:groom_ceremony_only}}</td>
         </tr>
     </table>
     <br/>

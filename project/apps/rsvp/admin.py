@@ -26,7 +26,7 @@ class GroupAdmin(admin.ModelAdmin):
                 'city', 'state', 'zipcode', )
             }),
         ('Admin Use Only', {
-            'fields': ('number_guests',
+            'fields': ('number_guests', 'rehearsal_dinner',
                 'announcement_required', 'announcement_sent',
                 'invitation_required', 'invitation_sent',
                 'thank_you_required', 'thank_you_sent',
@@ -37,13 +37,13 @@ class GroupAdmin(admin.ModelAdmin):
     list_display = ['name', 'code', 'response', 'party',
             'announcement_sent', 'invitation_sent',
             #'address', 'city', 'state', 'zipcode', 
-            'number_guests', ]
+            'number_guests', 'rehearsal_dinner', ]
             #'announcement_required', 'invitation_required', 'thank_you_required', ]
     list_editable = ['number_guests',
-            'announcement_sent', 'invitation_sent',
+            'announcement_sent', 'invitation_sent', 'rehearsal_dinner',
             #'announcement_required', 'invitation_required', 'thank_you_required', 
             ]
-    list_filter = ['response', 'party',
+    list_filter = ['response', 'party', 'rehearsal_dinner',
             'announcement_required', 'invitation_required', 'thank_you_required', ]
     search_fields = ['name', 'gift_received', ]
 

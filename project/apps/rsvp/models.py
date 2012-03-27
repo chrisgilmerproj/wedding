@@ -12,6 +12,7 @@ class Group(models.Model):
         (0, 'No Response'),
         (1, 'Attending'),
         (2, 'Not Attending'),
+        (3, 'Ceremony Only'),
     )
     PARTY_CHOICES = (
         (0, 'Bride'),
@@ -34,6 +35,7 @@ class Group(models.Model):
 
     # Admin Only
     number_guests = models.PositiveSmallIntegerField(default=1)
+    rehearsal_dinner = models.BooleanField(default=False)
     updated = models.DateTimeField(auto_now=True)
 
     announcement_required = models.BooleanField()

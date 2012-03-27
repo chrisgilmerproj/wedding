@@ -85,6 +85,8 @@ def stats(request):
         'bride_attending': Group.objects.filter(party=0, response=1).count(),
         'bride_not_attending_num': Guest.objects.filter(group__party=0, group__response=2).count(),
         'bride_not_attending': Group.objects.filter(party=0, response=2).count(),
+        'bride_ceremony_only_num': Guest.objects.filter(group__party=0, group__response=3).count(),
+        'bride_ceremony_only': Group.objects.filter(party=0, response=3).count(),
 
         'groom_no_response_num': Guest.objects.filter(group__party=1, group__response=0).count(),
         'groom_no_response': Group.objects.filter(party=1, response=0).count(),
@@ -92,6 +94,8 @@ def stats(request):
         'groom_attending': Group.objects.filter(party=1, response=1).count(),
         'groom_not_attending_num': Guest.objects.filter(group__party=1, group__response=2).count(),
         'groom_not_attending': Group.objects.filter(party=1, response=2).count(),
+        'groom_ceremony_only_num': Guest.objects.filter(group__party=1, group__response=3).count(),
+        'groom_ceremony_only': Group.objects.filter(party=1, response=3).count(),
 
         'meat': Guest.objects.filter(group__response=1, meal=0).count(),
         'fish': Guest.objects.filter(group__response=1, meal=1).count(),
