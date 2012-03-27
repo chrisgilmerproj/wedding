@@ -86,6 +86,7 @@ class Guest(models.Model):
     group = models.ForeignKey(Group)
     first_name = models.CharField(max_length=30)
     last_name = models.CharField(max_length=30)
+    child = models.BooleanField(default=False)
     meal = models.IntegerField(choices=MEAL_CHOICES, default=0)
 
     def __unicode__(self):

@@ -8,8 +8,8 @@ class GuestInline(admin.TabularInline):
 
 
 class GuestAdmin(admin.ModelAdmin):
-    list_display = ['group', 'first_name', 'last_name', 'meal']
-    list_filter = ['group', 'last_name', 'meal']
+    list_display = ['group', 'first_name', 'last_name', 'child', 'meal']
+    list_filter = ['group', 'last_name', 'child', 'meal']
     raw_id_fields = ['group', ]
     search_fields = ['first_name', 'last_name', ]
 

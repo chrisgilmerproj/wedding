@@ -47,6 +47,7 @@ def rsvp_edit(request, **kwargs):
     group = get_object_or_404(Group, code=code)
 
     GuestInlineFormSet = inlineformset_factory(Group, Guest,
+            exclude=('child',),
             extra=group.number_guests, max_num=group.number_guests)
     if request.method == "POST":
         form = GroupForm(request.POST, instance=group)
@@ -97,7 +98,7 @@ def stats(request):
         'groom_ceremony_only_num': Guest.objects.filter(group__party=1, group__response=3).count(),
         'groom_ceremony_only': Group.objects.filter(party=1, response=3).count(),
 
-        'rehearsal_dinner': Guest.objects.filter(group__response=1, group__rehearsal_dinner=True).count(),
+        'rehearsal_dinner': Guest.objects.filter(group__response=1, group__rehearsal_dinner=True, child=False).count(),
 
         'meat': Guest.objects.filter(group__response=1, meal=0).count(),
         'fish': Guest.objects.filter(group__response=1, meal=1).count(),
