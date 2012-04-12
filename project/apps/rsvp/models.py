@@ -1,8 +1,10 @@
 import random
+import sys
 
 from django.contrib.localflavor.us.models import USStateField
 from django.contrib.localflavor.us.us_states import US_STATES
 from django.db import models
+from django.core.mail import send_mass_mail
 
 
 class Group(models.Model):
@@ -72,6 +74,60 @@ class Group(models.Model):
 
     class Meta:
         ordering = ('name', )
+
+    @classmethod
+    def rsvp_reminder(cls):
+        question = raw_input('Are you sure you want to send emails? ')
+        if question.lower() not in ['y', 'yes']:
+            sys.exit()
+
+        mail_list = []
+        subject = 'Chris and Megan RSVP Reminder'
+        from_email = 'chris.gilmer@gmail.com'
+        message_txt = """
+Dear %(name)s,
+
+You're getting this email because you haven't RSVPed to our
+wedding yet.  That's okay; the deadline for us getting info
+to the vendors isn't for a couple of weeks, but we really
+would like to hear from you sooner rather than later so that
+we can start planning accordingly.
+
+You don't need your invitation to RSVP.  Instead you can
+click the following link and RSVP on our website:
+
+http://celebratechrisandmegan.com/rsvp/%(code)s/
+
+Once there you can RSVP for each person in your group
+individually and choose your meal option (red meat, fish, or
+vegetarian).
+
+The rest of the website holds useful info about the location
+of the venue, etc, and will be updated as we get more
+information ourselves
+
+If you haven't responded because you couldn't figure out the
+website, have lost your invitation, or any other reason,
+please call us directly.
+
+Megan at (415) 328-9245 or Chris at (303) 907-5277
+
+Please get back to us by the end of April... If you don't,
+we're going to pester you by phone until you respond.
+
+Thanks,
+Megan and Chris
+"""
+
+        for group in cls.objects.filter(response=0):
+            recipient_list = [group.email]
+            message = message_txt % ({'name': group.name,
+                                      'code': group.code,
+                                     })
+            if group.invitation_sent:
+                mail_list.append((subject, message, from_email, recipient_list))
+
+        send_mass_mail(mail_list, fail_silently=False)
 
 
 class Guest(models.Model):
