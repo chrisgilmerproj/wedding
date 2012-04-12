@@ -82,6 +82,8 @@ class Group(models.Model):
             sys.exit()
 
         mail_list = []
+        call_list = []
+
         subject = 'Chris and Megan RSVP Reminder'
         from_email = 'chris.gilmer@gmail.com'
         message_txt = """
@@ -125,10 +127,14 @@ Megan and Chris
                                       'code': group.code,
                                      })
             if group.invitation_sent:
-                mail_list.append((subject, message, from_email, recipient_list))
+                if group.email:
+                    mail_list.append((subject, message, from_email, recipient_list))
+                else:
+                    call_list.append((group.name, group.phone))
 
         send_mass_mail(mail_list, fail_silently=False)
-
+        for item in call_list:
+            print item
 
 class Guest(models.Model):
     """ Capture information about each guest """
