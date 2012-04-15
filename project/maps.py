@@ -14,7 +14,7 @@ def main():
     writer.writerow(['Address', 'City', 'State', 'Zipcode', 'Name', 'Phone Number', 'Group', 'URL', 'Email'])
     
     
-    for group in Group.objects.all():
+    for group in Group.objects.filter(response=1):
         writer.writerow([
             group.address,
             group.city,
