@@ -103,6 +103,10 @@ def stats(request):
         'meat': Guest.objects.filter(group__response=1, meal=0).count(),
         'fish': Guest.objects.filter(group__response=1, meal=1).count(),
         'veggie': Guest.objects.filter(group__response=1, meal=2).count(),
+
+        'r_meat': Guest.objects.filter(group__response=1, group__rehearsal_dinner=True, child=False, meal=0).count(),
+        'r_fish': Guest.objects.filter(group__response=1, group__rehearsal_dinner=True, child=False, meal=1).count(),
+        'r_veggie': Guest.objects.filter(group__response=1, group__rehearsal_dinner=True, child=False, meal=2).count(),
     }
     return render_to_response(
         template_name,
